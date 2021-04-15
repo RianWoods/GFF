@@ -636,9 +636,17 @@
                                                         <select id="attributes"
                                                             class="form-control form-control-sm col-md-8"
                                                             style="max-width: 70px; min-width: 70px"
-                                                        >
-                                                            <option value="tester1">TEST1</option>
-                                                            <option value="tester2">TEST2</option>
+                                                            onclick="
+                                                                graphvis.target = this.value;
+                                                            "
+                                                            onchange="
+                                                                graphvis.target = this.value;
+                                                            "
+                                                    >
+                                                            <option>None</option>
+                                                            <!--<option value="tester1">TEST1</option>
+                                                            <option value="tester2">TEST2</option>-->
+                                                            <!--option-->
                                                         </select>
                                                     </td>
                                                     <td style="width: 100%; text-align: right;">
