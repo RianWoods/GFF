@@ -83,6 +83,7 @@ class Graph:
         target = argms["target"]
         algorithm = argms["algorithm"]
         importance = argms["relevance"]
+        attributes = argms["attributes"]
         filefe = datapath+argms["file"]+"/transform.csv"
         isfeature = True if int(argms["isfeature"])==1 else False
         #featureselected= argms["featureselected"]
@@ -101,6 +102,7 @@ class Graph:
         columns = X.columns()
         colsindexes = X.columnsindexes()
         target_id = X.columnindex(target)
+        attributes_id = X.columnindex(attributes)
         N = X.cols()
         pm_t = X.proximitymatrix_cols(pmetric)
         prox_types = ProximityMatrix.POT
@@ -155,6 +157,11 @@ class Graph:
                         node["weight"] = d;
                         
                         self.data["ranking"][node["name"]] = dr
+
+                    elif i == attributes_id:
+                        # remove attributes from nodes list
+                        graph["nodes"].delete({i})
+
 
                 self.data["rankingmin"] = minfr_
                 self.data["rankingmax"] = maxfr_
