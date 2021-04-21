@@ -1253,6 +1253,11 @@
                                                      min-width: 110px; max-width: 110px;
                                                      ">PROXIMITY</div>
                                             </td>
+                                            <td>
+                                                <div style="font-size: 10px;
+                                                     min-width: 110px; max-width: 110px;
+                                                     ">TOOLTIP</div>
+                                            </td>
                                             <td style="width: 100%">
 
                                             </td>
@@ -1310,6 +1315,20 @@
                                                                 <option value="lspfastmap">LSP-FASTMAP</option> -->
 
                                                                 <!--<option value="mst">MST</option>-->
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select id="tooltip"
+                                                            class="form-control form-control-sm col-md-8"
+                                                            style="max-width: 70px; min-width: 70px"
+                                                            onclick="
+                                                                graphvis.attributes = this.value;
+                                                            "
+                                                            onchange="
+                                                                graphvis.attributes = this.value;
+                                                            "
+                                                    >
+                                                            <option>None</option>
                                                         </select>
                                                     </td>
                                                     <td style="width: 100%; text-align: right">
