@@ -86,6 +86,7 @@ function DataIO() {
             "nodetarget": "",
             "layout": "",
             "attributes": "",
+            "tooltip": "",
             "projection": "",
             "infleft": "",
             "infright": "",
@@ -179,6 +180,7 @@ function GraphVis() {
     this.intargetaction = false;
     this.target = "";
     this.attributes = [];
+    this.tooltip = "";
     this.lfenamesindex = {};
     this.lfenames = []
     this.dataoutfeature = null;
@@ -224,6 +226,7 @@ function GraphVis() {
             ob.in.argms["algorithm"] = gvalue('algorithm');
             ob.in.argms["layout"] = gvalue('layout');
             ob.in.argms["attributes"] = self.attributes;
+            ob.in.argms["tooltip"] = self.tooltip;
             ob.in.argms["topleft"] = 'topleft1';
             ob.in.argms["topfright"] = 'topright1';
             ob.in.argms["infleft"] = 'topleft1';
@@ -298,6 +301,7 @@ function GraphVis() {
             ob.in.argms["algorithm"] = gvalue('algorithm');
             ob.in.argms["layout"] = gvalue('layout');
             ob.in.argms["attributes"] = self.attributes;
+            ob.in.argms["tooltip"] = self.tooltip;
             ob.in.argms["projection"] = gvalue('projection');
             ob.in.argms["topleft"] = 'topleft2';
             ob.in.argms["topfright"] = 'topright2';
@@ -407,6 +411,7 @@ function GraphVis() {
         self.intarget = false;
         self.target = "";
         self.attributes = [];
+        self.tooltip = "";
         self.exchageslider = 0;
 
         self.layoutfeatures = null;
@@ -446,6 +451,10 @@ function GraphVis() {
                 gelem("attributes").innerHTML = strs;
                 gelem("attributes").selectedIndex = Object.keys(self.lfenamesindex).length - 1;
                 self.attributes = gelem("attributes").value;
+
+                gelem("tooltip").innerHTML = strs;
+                gelem("tooltip").selectedIndex = Object.keys(self.lfenamesindex).length - 1;
+                self.tooltip = gelem("tooltip").value;
             }
 
             if ("lastversion" in this.ou && "versionfeature" in this.ou && this.ou["lastversion"] == this.ou["versionfeature"]) {
@@ -475,6 +484,15 @@ function GraphVis() {
                             gelem("attributes").selectedIndex = Object.keys(self.lfenamesindex).length - 1;
                             self.attributes = gelem("attributes").value;
                         }
+                        if ("tooltip" in conf) {
+                            gelem('tooltip').value = conf["tooltip"];
+                            self.tooltip = conf["tooltip"];
+                        }
+                        else {
+                            gelem("tooltip").selectedIndex = Object.keys(self.lfenamesindex).length - 1;
+                            self.tooltip = gelem("tooltip").value;
+                        }
+
                         if ("proximity" in conf) {
                             //gelem("proximity").selectedIndex = self.proximity[conf["proximity"]];
                             gelem('proximity').value = conf["proximity"];
