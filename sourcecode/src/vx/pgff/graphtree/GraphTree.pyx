@@ -158,9 +158,9 @@ class Graph:
                         
                         self.data["ranking"][node["name"]] = dr
 
-                    elif i == attributes_id:
+                    # elif i == attributes_id:
                         # remove attributes from nodes list
-                        graph["nodes"].delete({i})
+                        # graph["nodes"].delete({i})
 
 
                 self.data["rankingmin"] = minfr_
