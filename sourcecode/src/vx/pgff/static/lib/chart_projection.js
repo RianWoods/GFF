@@ -205,7 +205,7 @@ function plotProjection(projectioncolorf, idview, selft, dat, argms) {
         .merge(self.nodesc);
 
     self.nodesc.append("title")
-        .text(function (d) { return "ID: " + d.id; });
+        .text(function (d) { return "Label: " + d.label; });
 
     this.highlight = function (view, ids) {
         d3.select(view).selectAll("circle")
