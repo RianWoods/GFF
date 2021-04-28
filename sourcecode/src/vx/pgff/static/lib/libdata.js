@@ -5,14 +5,22 @@
 */
 
 
+<<<<<<< HEAD
 //EdgeColor = d3.interpolateRgbBasis(["#b300d5", "#fff200", "#6cff00", "#00d3ff", "#0068ff"]);
 //EdgeColor  = ["#f46d43","#fdae61","#fee08b","#e6f598","#abdda4","#66c2a5","#3288bd"]
 // EdgeColorPlasma = ["#310086", "#6100a0", "#9300a3", "#bb2885", "#d85969", "#ee884e", "#f5c03b", "#e5fb41"]
 //EdgeColorF = d3.interpolateRgbBasis(EdgeColor);
+=======
+/**
+ * Making initial objects
+ */
+CCTT = new ColorPalette();
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 
 CCTT.id = "plasma";
 EdgeColorF = CCTT.interpolate();
 
+<<<<<<< HEAD
 // VertexColor = ["#ffd830", "#f49900", "#f43e00", "#b9106a", "#8d2e01"]
 CCTT.id = "oranges";
 VertexColorF = CCTT.interpolate();
@@ -102,10 +110,28 @@ function DataIO() {
         },
         "layoutfeature": {},
         "layoutinstance": {},
+=======
+CCTT.id = "oranges";
+VertexColorF = CCTT.interpolate();
+
+CCTT.id = "rainbow";
+ProjectionColorF = CCTT.interpolate();
+
+MOPRO = new MonitorProcess();
+
+
+/**
+ * Auxiliar methods
+ */
+function DataIO() {
+    var data = {
+        "argms": {}
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
     };
     return data;
 }
 
+<<<<<<< HEAD
 
 var processkey = 0;
 var process = {};
@@ -123,28 +149,52 @@ function popprocess(p) {
 }
 function showloading() {
     gelem("idloading").style.display = "block";
+=======
+/* 
+function showloading(text) {
+    gelem("idloading").style.display = "block";
+    gelem("idloadingtxt").innerHTML = text+" ...";
+}
+function showstatus(load) {
+    gelem("idloadingload").style.width = load+"%";
+    //gelem("idloadingload").innerHTML = size;
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 }
 function hideloading() {
     gelem('idloading').style.display = "none";
 }
+<<<<<<< HEAD
 
 
 
 
+=======
+ */
+
+
+/**
+ * Claass: SevcieData
+ */
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 function ServiceData(pname) {
     var self = this;
     this.in = new DataIO();
     this.ou = '';
     this.event = function () { };
     this.start = function () {
+<<<<<<< HEAD
         processkey++;
         let ps = processkey;
         pushprocess(ps, pname);
+=======
+        var ps = MOPRO.pushprocess(pname);
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
         try {
             var url = "./query?data=" + JSON.stringify(self.in);
             d3.json(url, function (data) {
                 self.ou = data;
                 self.event();
+<<<<<<< HEAD
                 popprocess(ps);
             });
         }
@@ -153,23 +203,149 @@ function ServiceData(pname) {
             alert("Error: " + err.message);
         }
 
+=======
+                MOPRO.popprocess(ps);
+            });
+        }
+        catch (err) {
+            MOPRO.popprocess(ps);
+            //self.mw.alert("","Error: " + err.message);
+            console.log("err.message", err.message);
+        }
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
     };
 }
 
 
+<<<<<<< HEAD
 function GraphVis() {
     let self = this;
+=======
+/**
+ * Claass: Graph From Features
+ */
+function GraphFromFeatures() {
+    let self = this;
+    this.datax = {}
+
+    this.listinstances = [
+        {
+            "collect":"instances",
+            "query":    [
+                            ["configinstance"],
+                            ["typeinstance"],
+                            ["layoutinstance"],
+                            ["versioninstance"],
+                        ]
+        }
+    ];
+
+    
+    this.listfeatures = [
+        {
+            "collect":"features",
+            "query":    [
+                            ["configfeature"],
+                            ["typefeature"],
+                            ["versionfeature"],
+                            ["featurecheck"],
+
+                            ["layoutfeature","root"],
+                            ["layoutfeature","ranking"],
+                            ["layoutfeature","rankingmin"],
+                            ["layoutfeature","rankingmax"],
+                            ["layoutfeature","initvertex1"],
+                            ["layoutfeature","initvertex2"],
+                            ["layoutfeature","tree"],
+                            ["layoutfeature","treehi"],
+                            ["layoutfeature","edgehist"]
+                        ]
+        },
+
+        {
+            "collect":"features",
+            "query":    [
+                            ["layoutfeature","graph","nodes"]
+                        ]
+        },
+
+        {
+            "collect":"features",
+            "query":    [
+                            ["layoutfeature","graph","links"]
+                        ]
+        },
+
+        {
+            "collect":"features",
+            "query":    [
+                            ["layoutfeature","graph","whole"]
+                        ]
+        },
+
+    ];
+    
+
+    this.listbase = [
+                            {
+                                "collect":"features",
+                                "query":    [
+
+                                                ["fenames"],
+                                                ["lastversion"],
+                                                    
+                                                ["_id"],
+                                                ["name"],
+                                                ["type"],
+
+                                                /* features */
+                                                /* instances */
+
+                                                ["datecreate"],
+                                                ["dateupdate"],
+                                                ["hasupdate"],
+                                                ["isshare"],
+                                                
+                                                ["statusopt"],
+                                                ["statusval"],
+                                                
+                                                ["_id_user"]
+                                            ]
+                            },
+
+                        ];
+
+    this.listdataset = this.listbase.concat(this.listfeatures, this.listinstances);
+    this.listdataset_count = 0;
+    this.datagff = {};
+    this.memprocess = function(){};
+    //console.log("this.listdataset", this.listdataset);
+
+
+
+    this.mw = new ModalWindow();
+    this.USFOBJ = new UnselectedFeatures("idselectedfebt","idunselectedfecont",self);
+        
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
     this.adminid = 0;
     this.email = "";
     this.multiuser = 0;
 
     this.layoutfeatures = null;
+<<<<<<< HEAD
     this.layoutintantes = null;
+=======
+    this.layoutinstance = null;
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 
     this.dataload = [];
     this.datafiles = [];
     this.featureselected = [];
+<<<<<<< HEAD
     this.ranking = [];
+=======
+    //this.ranking = [];
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
     this.datafileselected = "";
     this.datafileselectedname = "";
     this.lwidth = ((window.screen.availWidth) / 2) - 100;
@@ -179,12 +355,19 @@ function GraphVis() {
     this.exchageslider = 0;
     this.intargetaction = false;
     this.target = "";
+<<<<<<< HEAD
     this.attributes = [];
     this.tooltip = "";
     this.lfenamesindex = {};
     this.lfenames = []
     this.dataoutfeature = null;
     this.dataoutinstance = null;
+=======
+    this.lfenamesindex = {};
+    //this.lfenames = []
+    //this.dataoutfeature = null;
+    //this.dataoutinstance = null;
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
     this.edgetransparency = 0.75;
 
     this.instvertexratio = 4;
@@ -196,6 +379,7 @@ function GraphVis() {
 
     this.colorstableshitttype = -1;
 
+<<<<<<< HEAD
     //this.proximity = {  "Euclidean":0, "Manhattan":1, "Chebychev":2,
     //                    "Cosine":3, "Pearson":4,"Correlation":5};
     //this.relevance = {  "Pearson":0, "Correlation":1, "Extratrees":2};
@@ -220,11 +404,88 @@ function GraphVis() {
             ob.in.argms["target"] = self.target;
             ob.in.argms["intarget"] = self.intarget;
             //console.log("ob.in.argms[intarget]", ob.in.argms["intarget"]);
+=======
+    
+    // new attributes
+    this.unselectedfeids = [];
+    this.idinstancelabel = [];
+    
+    this.auxfeatureselectedf = {};
+    this.auxfeatureselectedi = {};
+
+
+    this.featuresChecks = [];
+    this.featuresChecks_count = 0;
+
+/*     this.featuresChecks = [];
+    this.featuresChecks_count = 0; */
+
+    this.makeFeatureAux = function(nodes){
+        var rest = {};
+        for(var e of nodes){
+            rest[e.label] = e.name;
+        }
+        return rest;
+    };
+
+    this.makeInstancesLabels = function(colname){
+        if (self.datafileselected != "" && colname!=""){
+            var ob = new ServiceData("compute instances labels");
+            ob.in.argms["type"] = 21;
+            ob.in.argms["file"] = self.datafileselected;
+            ob.in.argms["idinstanceslabels"] = colname;
+
+            ob.event = function () {
+                self.idinstancelabel = this.ou;
+            };
+            ob.start();
+        }
+    };
+
+
+    this.getfeatureselected = function (){
+        var featureselectedTrueIds = [];
+        for(var i of self.featureselected){
+            label = self.getNode(i).label;
+            tid = self.lfenamesindex[label];
+            if (self.USFOBJ.at(tid).value==0){
+                featureselectedTrueIds.push(tid);
+            }
+        }
+        return featureselectedTrueIds;
+    };
+
+    this.setfeatureselected = function (featureselected){
+        rest = [];
+        for(var i of featureselected){
+            nam = self.datagff.fenames[i];
+            rest.push(self.auxfeatureselectedf[nam]);
+        }
+        return rest;
+    };
+
+    
+    this.visFeatures = function () {
+
+        //self.fullScreen();
+        self.setfullScreen();
+        self.unselectedfeids = self.USFOBJ.getUnselected();        
+        
+        if (self.datafileselected != "" && self.unselectedfeids.length<(self.datagff.fenames.length-1)) {
+            self.cleanfeatures();
+            var status = "making graphs from features";
+            var ob = new ServiceData(status);
+            ob.in.argms["type"] = 0;
+            ob.in.argms["file"] = self.datafileselected;
+            ob.in.argms["target"] = self.target;
+            ob.in.argms["intarget"] = self.intarget;
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
             ob.in.argms["proximity"] = gvalue('proximity');
             ob.in.argms["instanceproximity"] = gvalue('instanceproximity');
             ob.in.argms["relevance"] = gvalue('relevance');
             ob.in.argms["algorithm"] = gvalue('algorithm');
             ob.in.argms["layout"] = gvalue('layout');
+<<<<<<< HEAD
             ob.in.argms["attributes"] = self.attributes;
             ob.in.argms["tooltip"] = self.tooltip;
             ob.in.argms["topleft"] = 'topleft1';
@@ -291,6 +552,48 @@ function GraphVis() {
         if (self.featureselected.length >= 2) {
             //console.log("console log instances");
             var ob = new ServiceData("vis instances");
+=======
+            ob.in.argms["isfeature"] = 1;
+            ob.in.argms["featureselected"] = self.getfeatureselected();
+            ob.in.argms["ranking"] = [];
+
+            ob.in.argms["idinstanceslabels"] = gvalue("idinstanceslabels");
+
+            ob.in.argms["statusval"] = status;
+
+            ob.event = function () {
+
+                if(this.ou["statusopt"]==0){
+                    //loading results
+                    //console.log("ready ok");
+                    self.dequeLoadFeatures();
+                    //self.processFeaturesResults(this.ou);
+                }
+                else if(this.ou["statusopt"]==1){
+                    //working
+                    self.memprocess = function () {
+                        self.dequeLoadFeatures();
+                    };
+                    self.showstatuspanel(this.ou);
+                }
+                else if(this.ou["statusopt"]==2){
+                    //error
+                    //console.log("error");
+                }
+            };
+            ob.start();
+        }
+
+    };
+
+
+    this.visInstnaces = function () {
+        self.cleaninstances();
+        self.setfullScreen();
+        if (self.featureselected.length >= 2) {
+            var status = "making projection from features selected";
+            var ob = new ServiceData(status);
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
             ob.in.argms["type"] = 4;
             ob.in.argms["threshold"] = 0.78;
             ob.in.argms["target"] = self.target;
@@ -300,8 +603,11 @@ function GraphVis() {
             ob.in.argms["relevance"] = gvalue('relevance');
             ob.in.argms["algorithm"] = gvalue('algorithm');
             ob.in.argms["layout"] = gvalue('layout');
+<<<<<<< HEAD
             ob.in.argms["attributes"] = self.attributes;
             ob.in.argms["tooltip"] = self.tooltip;
+=======
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
             ob.in.argms["projection"] = gvalue('projection');
             ob.in.argms["topleft"] = 'topleft2';
             ob.in.argms["topfright"] = 'topright2';
@@ -309,20 +615,39 @@ function GraphVis() {
             ob.in.argms["infright"] = 'infright2';
             ob.in.argms["file"] = self.datafileselected;
             ob.in.argms["isfeature"] = 0;
+<<<<<<< HEAD
             ob.in.argms["featureselected"] = self.featureselected;
             ob.in.argms["ranking"] = [];
 
+=======
+            ob.in.argms["featureselected"] = self.getfeatureselected();
+            ob.in.argms["ranking"] = [];
+
+            ob.in.argms["idinstanceslabels"] = gvalue("idinstanceslabels");
+
+            ob.in.argms["statusval"] = status;
+
+            //self.unselectedfeids
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
             if (ob.in.argms["projection"] == "mst") {
 
             }
             else if (ob.in.argms["projection"] == "simple") {
                 self.loadfilecsv();
+<<<<<<< HEAD
                 //console.log("simple");
                 setTimeout(showloading, 1);
+=======
+                setTimeout( function() {
+                                MOPRO.show("simple projection");
+                            }
+                            , 1);
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                 setTimeout(self.plotpaiercorrelate, 100);
             }
             else {
                 ob.event = function () {
+<<<<<<< HEAD
                     self.dataoutinstance = this.ou;
                     //console.log("data instance:",self.dataoutinstance);
                     if ("lastversion" in this.ou && "versioninstance" in this.ou && this.ou["lastversion"] == this.ou["versioninstance"]) {
@@ -332,29 +657,377 @@ function GraphVis() {
                         self.layoutintantes = new plotProjection(ProjectionColorF, idview, self, data, this.in.argms);
                         gelem("topleft2").innerHTML = "";
 
+=======
+                    if(this.ou["statusopt"]==0){
+                        self.dequeLoadInstances();
+                        //self.processInstancesResults(this.ou);
+                        //self.processFeaturesResults(this.ou);
+                    }
+                    else if(this.ou["statusopt"]==1){
+                        //working
+                        self.memprocess = function () {
+                            self.dequeLoadInstances();
+                        };
+                        self.showstatuspanel(this.ou);
+                    }
+                    else if(this.ou["statusopt"]==2){
+                        //error
+                        //console.log("error");
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                     }
                 };
                 ob.start();
             }
         }
     };
+<<<<<<< HEAD
+=======
+    
+
+   
+
+
+    /**
+     * Load one dataset
+     */
+    this.dequeLoadDataset = function(datasetid){
+        MOPRO.auto = false;
+
+        var obj = {};
+        var count = 0;
+        loadObject( "loading dataset", obj, self.listdataset, count, datasetid,
+            //process function
+            function (obj, ou) {
+                for(let q of ou["response"]){
+                    setDict(obj, q["query"], q["response"]);
+                }
+            },
+            //end function
+            function (obj) {
+                MOPRO.auto = true;
+        
+                self.datagff = {};
+                self.datagff = obj;
+                
+                self.processFeaturesResults(self.datagff);
+                self.processInstancesResults(self.datagff);
+            },
+            //busy function
+            function (ou) {
+                self.memprocess = function () {
+                    self.dequeLoadDataset(datasetid);
+                    //console.log("busyyyyyyyyyyyyyyyyy datasetatast");
+                };
+                self.showstatuspanel(ou);
+                //self.shifflayoutcontrols("idstatedataset");
+            },
+            24
+        );
+    };
+
+
+    /**
+     * Load one dataset-features
+     */
+     this.dequeLoadFeatures = function(){
+        MOPRO.auto = false;
+        var count = 0;
+        var obj = {};
+        loadObject("loading dataset (features)", obj, self.listfeatures, count, self.datafileselected, 
+            //process function
+            function (obj, ou) {
+                for(let q of ou["response"]){
+                    setDict(obj, q["query"], q["response"]);
+                }
+            }, 
+            //end function
+            function(obj) {
+                MOPRO.auto = true;
+                //update datagff
+                for (var k in obj){
+                    self.datagff[k] = {};
+                    self.datagff[k] = obj[k];
+                }
+                self.processFeaturesResults(self.datagff);
+            },
+            //busy function
+            function (ou) {
+                self.memprocess = function () {
+                    self.dequeLoadFeatures();
+                    //console.log("busyyyyyyyyyyyyyyyyy");
+                };
+                self.showstatuspanel(ou);
+            },
+            24
+        );
+    };
+
+
+    /**
+     * Load one dataset-features
+     */
+     this.dequeLoadInstances = function(){
+        MOPRO.auto = false;
+        var count = 0;
+        var obj = {};
+        loadObject("loading dataset (instances)", obj, self.listinstances, count, self.datafileselected, 
+            //process function
+            function (obj, ou) {
+                for(let q of ou["response"]){
+                    setDict(obj, q["query"], q["response"]);
+                }
+            }, 
+            //end function
+            function(obj) {
+                MOPRO.auto = true;
+                //update datagff
+                for (var k in obj){
+                    self.datagff[k] = {};
+                    self.datagff[k] = obj[k];
+                }
+                self.processInstancesResults(self.datagff);
+            },
+            //busy function
+            function (ou) {
+                self.memprocess = function () {
+                    self.dequeLoadInstances();
+                };
+                self.showstatuspanel(ou);
+            },
+            24
+        );
+    };
+
+    /**
+     * Send select and unselect features
+     */
+    this.dequeSendFeaturesChecks = function () {
+        self.unselectedfeids = self.USFOBJ.getUnselected();                
+        if (self.datafileselected != "" && self.unselectedfeids.length<(self.datagff.fenames.length-1)) {
+            var list = [];
+            for (var e of self.USFOBJ.unselectedfeatures){
+                var v = e.value==1 ? 0 : 1;
+                list.push([e.id, v]);
+            }
+            //self.featuresChecks = chunk(self.USFOBJ.unselectedfeatures,5);
+            self.featuresChecks = chunk(list,100);
+            
+            
+            MOPRO.auto = false;
+            var count = 0;
+            
+            var obj = {};
+            loadObject("sending features selected and unselected",
+                obj, self.featuresChecks, count, self.datafileselected,
+                //process function
+                function (obj, ou) {
+    
+                },
+                //end function
+                function (obj) {
+                    MOPRO.auto = true;
+                    self.visFeatures();
+                },
+                //busy function
+                function () {
+    
+                },
+                23
+            );
+        }
+    };
+
+    this.processFeaturesResults = function(ds){
+        self.shifflayoutcontrols("mainlayout");
+        if ("lastversion" in ds && "versionfeature" in ds && ds["lastversion"] == ds["versionfeature"]) {
+            //self.dataoutfeature = ds;
+            //self.ranking = ds.configfeature.ranking;
+
+            self.lfenamesindex = {};
+            //self.lfenames = [];
+            if ("fenames" in ds) {
+                //self.lfenames = ds["fenames"];
+                strs = "";
+                stro = "";
+                i = 0;
+                for (var item of ds["fenames"]) {
+                    self.lfenamesindex[item] = i;
+                    strs += "<option value='" + item + "'>" + item + "</option>";
+                    stro += "<option value='" + item + "'>" + item + "</option>";
+                    i++;
+                }
+                gelem("target").innerHTML = strs;
+                gelem("target").selectedIndex = Object.keys(self.lfenamesindex).length - 1;
+                self.target = gelem("target").value;
+                
+                gelem("idinstanceslabels").innerHTML = stro;
+                gelem("idinstanceslabels").selectedIndex = 0;
+            }
+            
+            if ("configfeature" in ds) {
+                conf = ds["configfeature"];
+                if ("target" in conf) {
+                    gelem('target').value = conf["target"];
+                    self.target = conf["target"];
+                }
+                if ("proximity" in conf) {
+                    gelem('proximity').value = conf["proximity"];
+                }
+                if ("relevance" in conf) {
+                    gelem('relevance').value = conf["relevance"];
+                }
+                if ("algorithm" in conf) {
+                    gelem('algorithm').value = conf["algorithm"];
+                }
+                if ("layout" in conf) {
+                    gelem('layout').value = conf["layout"];
+                }
+
+
+                //add feature selected
+                //add is target is included
+                if ("intarget" in conf) {
+                    self.intargetaction = conf["intarget"];
+                    self.intarget = conf["intarget"];
+                }
+                if (Object.keys(ds.layoutfeature.graph.nodes).length > 0 ) {
+                    self.auxfeatureselectedf = self.makeFeatureAux(ds.layoutfeature.graph.nodes);
+                }
+                if ("featureselected" in conf) {
+                    //console.log("conf[featureselected]", conf["featureselected"]);
+                    self.featureselected = self.setfeatureselected(conf["featureselected"]);
+                }
+
+                //begin new code
+                self.getUnselecteFeatures();
+                /* 
+                self.USFOBJ.init();
+                if ("unselectedfeids" in conf) {
+                    self.unselectedfeids = conf["unselectedfeids"];
+                    self.USFOBJ.load();
+                }
+                self.USFOBJ.print();
+                */
+                //end new code
+
+                if (    "typefeature" in ds &&
+                        "layoutfeature" in ds &&
+                        ds["layoutfeature"] != "" &&
+                        "layout" in conf
+                ){
+                    if (ds["typefeature"] == "graph") {
+                        inargms = {};
+                        inargms["infleft"] = 'topleft1';
+                        inargms["infright"] = 'topright1';
+                        //var data = ds["layoutfeature"];
+                        if (conf["layout"] == "fo" && Object.keys(ds["layoutfeature"]).length > 0) {
+                            self.layoutfeatures = new chart_force(VertexColorF, EdgeColorF, self, "#vis", -10, inargms);
+                        }
+                        else if (conf["layout"] == "sb" && Object.keys(ds["layoutfeature"]).length > 0) {
+                            self.layoutfeatures = new chart_sunburst("#vis", VertexColorF, self, inargms);
+                        }
+                        else if (conf["layout"] == "pk") {
+                            self.layoutfeatures = new chart_circlepack("#vis", self, VertexColorF);
+                        }
+                        gelem('edgeslider').value = 0;
+                        self.edgeslider = 0;
+                        
+                        chart_palettecolors(self.layoutfeatures.selectbythreshold,
+                            "seq1", 20, self.lwidth-20, VertexColorF);
+
+                        chart_histogram(self.setToolpiltex,
+                            self.hideToolpiltex,
+                            self.layoutfeatures.updatelinkoption,
+                            "seqedgehist", self.lwidth, EdgeColorF, self.datagff.layoutfeature["edgehist"]);
+
+                        self.changeintarget();
+                    }
+                    else if (ds["typefeature"] == "otherss") {
+                        if ("layoutfeature" in ds && ds["layoutfeature"] != "" && "layout" in conf) {
+
+                        }
+                    }
+                }
+            }
+        }
+            
+    };
+
+
+    this.processInstancesResults = function(ds){
+        self.shifflayoutcontrols("mainlayout");
+        if ("lastversion" in ds && "versioninstance" in ds && ds["lastversion"] == ds["versioninstance"]) {
+            //self.dataoutinstance = ds;
+            if ("configinstance" in ds) {
+                conf = ds["configinstance"];
+                if ("projection" in conf) {
+                    gelem('projection').value = conf["projection"];
+                }
+                if ("instanceproximity" in conf) {
+                    gelem('instanceproximity').value = conf["instanceproximity"];
+                }
+
+                if ("idinstanceslabels" in conf && conf["idinstanceslabels"]!="") {
+                    gelem('idinstanceslabels').value = conf["idinstanceslabels"];
+                    self.makeInstancesLabels(conf["idinstanceslabels"]);
+                }
+                else{
+                    self.makeInstancesLabels(gelem('idinstanceslabels').value);
+                }
+
+                if ("silhouette" in conf) {
+                    gelem("topleft2").innerHTML = "SILHOUETTE: " + conf["silhouette"];
+                }
+
+            }
+            if ("typeinstance" in ds) {
+                if (ds["typeinstance"] == "projection") {
+                    if ("layoutinstance" in ds && ds["layoutinstance"] != "") {
+                        //var data = ds["layoutinstance"];
+                        argms = {"infleft": 'infleft2',"infright": 'infright2'};
+                        self.layoutinstance = new plotProjection(ProjectionColorF, "#visp", self, argms);
+
+                        self.auxfeatureselectedi = self.makeFeatureAux(self.datagff.configinstance.nodes);
+                    }
+                }
+                else if (ds["typeinstance"] == "graph") {
+                    if ("layoutinstance" in ds) {
+                        //
+                    }
+                }
+            }
+        }
+    };
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 
     this.loaddatasets = function () {
         var ob = new ServiceData("load datasets");
         ob.in.argms["type"] = 1;
 
+<<<<<<< HEAD
         //console.log("listdatasets");
         ob.event = function () {
             self.datafiles = this.ou;
             //console.log("self.datafiles",this.ou);
             //datafiles.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
 
+=======
+        ob.event = function () {
+            self.datafiles = this.ou;
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
             self.searchdataset('');
         };
         ob.start();
     };
 
     this.loadlayoutdbs = function () {
+<<<<<<< HEAD
+=======
+/*         gelem('iddatasettitle').innerHTML = "";
+        gelem("iddatasettitle").style.display = "none"
+        gelem("layoutchangenametxtdb").style.display = "none" */
+        
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
         self.loaddatasets();
         self.shifflayoutcontrols('iddatasetlayout');
     };
@@ -364,7 +1037,10 @@ function GraphVis() {
         if(self.adminid==1){
             gelem("idformnewuser").innerHTML = USERC.newUserForm();
         }
+<<<<<<< HEAD
         //gelem("idformnewuser").innerHTML = "<table><tr><td>d<t/d></tr><tr><td>d<t/d></tr></table>";
+=======
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
         self.shifflayoutcontrols('iduserlayout');
     };
 
@@ -394,6 +1070,7 @@ function GraphVis() {
         gelem("topright2").innerHTML = "";
     }
 
+<<<<<<< HEAD
     this.opendataset = function (filename, userid) {
 
         self.isnamedbedited = true;
@@ -401,11 +1078,21 @@ function GraphVis() {
             self.isnamedbedited = false;
 
         self.fullScreen();
+=======
+    this.opendataset = function (filename, usersame) {
+
+        self.isnamedbedited = usersame;
+        
+        self.USFOBJ.close();
+
+        self.setfullScreen();
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 
         self.cleanfeatures();
         self.cleaninstances();
 
         self.featureselected = [];
+<<<<<<< HEAD
         self.ranking = [];
         self.intargetaction = false;
         self.intarget = false;
@@ -416,10 +1103,21 @@ function GraphVis() {
 
         self.layoutfeatures = null;
         self.layoutintantes = null;
+=======
+        //self.ranking = [];
+        self.intargetaction = false;
+        self.intarget = false;
+        self.target = "";
+        self.exchageslider = 0;
+
+        self.layoutfeatures = null;
+        self.layoutinstance = null;
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 
         self.datafileselected = filename;
         self.getdatasetname();
 
+<<<<<<< HEAD
         self.openfeature();
         self.openinstance();
         self.shifflayoutcontrols('mainlayout');
@@ -626,6 +1324,19 @@ function GraphVis() {
 
 
 
+=======
+        /*
+        self.openfeature();
+        self.openinstance();
+        */
+        self.shifflayoutcontrols('mainlayout');
+
+        self.dequeLoadDataset(self.datafileselected);
+
+
+    };
+
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
     this.searchdataset = function (txti) {
         let txt = trim(txti);
         gelem("idtabledatasets").innerHTML = "";
@@ -636,11 +1347,18 @@ function GraphVis() {
         else {
             b = self.datafiles;
         }
+<<<<<<< HEAD
         //console.log(b);
 
         var stringhtml = "";
         var txtshare = "";
         if(graphvis.multiuser==1){
+=======
+        var stringhtml = "";
+        var txtshare = "";
+
+        if(self.multiuser==1){
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
             txtshare =  `<th>
                             <div style="width: 70px">
                                 Is shared?
@@ -651,8 +1369,12 @@ function GraphVis() {
                                 Owner
                             </div>
                         </th>
+<<<<<<< HEAD
                         `
                         //`+graphvis.multiuser+`
+=======
+                        `;
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
         }
         stringhtml = `<table class="table table-striped table-sm btn-table" style="margin: 0 auto">
                     <thead>
@@ -681,11 +1403,23 @@ function GraphVis() {
                         ></i>`;
 
         for (var i = 0; i < b.length; ++i) {
+<<<<<<< HEAD
+=======
+            var usersame = false;
+            if (b[i]._id_user_query == b[i]._id_user) {
+                usersame = true;
+            }
+    
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
             stringhtml += `<tr class="trover"
                                 style="z-index:9">`;
             stringhtml += `<td
                                 onclick="
+<<<<<<< HEAD
                                     graphvis.opendataset('`+ b[i]._id + `', '` + b[i]._id_user + `');
+=======
+                                    GFFOBJ.opendataset('`+ b[i]._id + `', `+usersame+`);
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                 "
                                 title="Open dashboard"
                             >`+ b[i].name + `</td>`;
@@ -694,19 +1428,33 @@ function GraphVis() {
             if (b[i].isshare == 1)
                 issh = isnoshare;
 
+<<<<<<< HEAD
             if (graphvis.multiuser==1){
             stringhtml += `<td
                                 onclick="
                                     graphvis.opendataset('`+ b[i]._id + `', '` + b[i]._id_user + `');
+=======
+            if (self.multiuser==1){
+            stringhtml += `<td
+                                onclick="
+                                    GFFOBJ.opendataset('`+ b[i]._id + `', `+usersame+`);
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                 "
                                 title="Open dashboard"
                             >`+ issh + `</td>`;
             }
             
+<<<<<<< HEAD
             if (graphvis.multiuser==1){
             stringhtml += `<td
                                 onclick="
                                     graphvis.opendataset('`+ b[i]._id + `', '` + b[i]._id_user + `');
+=======
+            if (self.multiuser==1){
+            stringhtml += `<td
+                                onclick="
+                                    GFFOBJ.opendataset('`+ b[i]._id + `', `+usersame+ `);
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                 "
                                 title="Open dashboard"
                             >
@@ -720,14 +1468,22 @@ function GraphVis() {
             }
 
             ownclt = ""
+<<<<<<< HEAD
             if (b[i]._id_user != "") {
+=======
+            if (usersame) {
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 
                 ownclt1 = `
                             <a href="#" class="btn btn-light"
                                 style="padding: 2px;"
                                 title="Share dataset"
                                 onclick="
+<<<<<<< HEAD
                                     graphvis.sharedataset('`+ b[i]._id + `');
+=======
+                                    GFFOBJ.sharedataset('`+ b[i]._id + `');
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                 "
                             >
                                 <i  class="fa fa-link fa-lg"
@@ -738,7 +1494,11 @@ function GraphVis() {
                                 style="padding: 2px;"
                                 title="Unshare dataset"
                                 onclick="
+<<<<<<< HEAD
                                     graphvis.unsharedataset('`+ b[i]._id + `');
+=======
+                                    GFFOBJ.unsharedataset('`+ b[i]._id + `');
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                 "
                             >
                                 <i class="fa fa-link fa-lg"
@@ -752,7 +1512,14 @@ function GraphVis() {
                                         style="padding: 2px;"
                                         title="Drop dataset"
                                         onclick="
+<<<<<<< HEAD
                                             graphvis.dropdataset('`+ b[i]._id + `');
+=======
+                                            GFFOBJ.mw.option('',
+                                                'Are you sure to delete the dataset?',
+                                                GFFOBJ.dropdataset,
+                                                ['`+b[i]._id+`']);
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                         "
                                     >
                                         <i class="fa fa-trash fa-lg"
@@ -765,7 +1532,11 @@ function GraphVis() {
             }
             stringhtml += `<td
                                 onclick="
+<<<<<<< HEAD
                                     graphvis.opendataset('`+ b[i]._id + `', '` + b[i]._id_user + `');
+=======
+                                    GFFOBJ.opendataset('`+ b[i]._id + `', `+usersame+`);
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                 "
                                 title="Open dashboard"
                             >`+ b[i].dateupdate + `</td>`;
@@ -775,7 +1546,14 @@ function GraphVis() {
                                         style="padding: 2px;"
                                         title="Clone dataset"
                                         onclick="
+<<<<<<< HEAD
                                             graphvis.clonedataset('`+ b[i]._id + `');
+=======
+                                        GFFOBJ.mw.option('',
+                                            'Are you sure to clone the dataset?',
+                                            GFFOBJ.clonedataset,
+                                            ['`+b[i]._id+`']);
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                         "
                                     >
                                         <i  class="fa fa-clone fa-lg"
@@ -784,9 +1562,15 @@ function GraphVis() {
                                     </a>
                                     <a href="#" class="btn btn-light"
                                         style="padding: 2px;"
+<<<<<<< HEAD
                                         title="Downlod dataset"
                                         onclick="
                                             graphvis.downloaddataset('`+ b[i]._id + `');
+=======
+                                        title="Download dataset"
+                                        onclick="
+                                            GFFOBJ.downloaddataset('`+ b[i]._id + `');
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                         "
                                     >
                                         <i class="fa fa-download fa-lg"
@@ -800,7 +1584,10 @@ function GraphVis() {
         }
         stringhtml += '</tbody></table>';
 
+<<<<<<< HEAD
         //console.log("stringhtml",stringhtml);
+=======
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
         gelem("idtabledatasets").innerHTML = stringhtml;
     };
 
@@ -809,7 +1596,17 @@ function GraphVis() {
         ob.in.argms["type"] = 3;
         ob.in.argms["file"] = self.datafileselected;
         ob.event = function () {
+<<<<<<< HEAD
             gelem('iddatasettitle').innerHTML = this.ou;
+=======
+            var txtnamedb = this.ou;
+            if (self.isnamedbedited){
+                txtnamedb += `&nbsp;<i class="fas fa-edit fa-sm"></i>`;
+            }
+            gelem('iddatasettitle').innerHTML = txtnamedb;
+            gelem('iddatasettitle').setAttribute("title","Change name");
+
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
             gelem('idtxtsearch').value = this.ou;
             gelem('idtextdbname').value = this.ou;
             self.datafileselectedname = this.ou;
@@ -821,6 +1618,7 @@ function GraphVis() {
     };
 
     this.uploadfiledata = function () {
+<<<<<<< HEAD
         // self.fullScreen();
         var ob = new DataIO();
         ob.argms.type = 3;
@@ -848,6 +1646,39 @@ function GraphVis() {
         d3.csv("./data/" + self.datafileselected + "/transform.csv", function (datai) {
             self.dataload = datai;
             //console.log("dataload!",dataload);
+=======
+        var fi = document.getElementById('fileu');
+        var file = fi.value;
+        var reg = /(.*?)\.(csv|zip)$/;
+        if (file.match(reg)) {
+            var fsize = fi.files.item(0).size;
+            var z = Math.round((fsize / 1024));
+            if (z <= 71680) {
+                var ob = new DataIO();
+                ob.argms.type = 3;
+                gelem('datafromupload').value = JSON.stringify(ob);
+                MOPRO.status(100);
+                MOPRO.show("uploading file");
+
+                //showloading
+                gelem('formupload').submit();        
+                gelem('fileu').value = "";        
+            }
+            else{
+                self.mw.alert("","please use files up to 70MB");
+            }
+        }
+        else{
+            self.mw.alert("","Please use .csv and zip files");
+        }
+        fi.value = "";
+    };
+
+    this.loadfilecsv = function () {
+        //d3.csv("http://localhost:8888/data/"+datafileselected+"/transform.csv", function(datai) {
+        d3.csv("./data/" + self.datafileselected + "/transform.csv", function (datai) {
+            self.dataload = datai;
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
         });
     };
 
@@ -863,14 +1694,20 @@ function GraphVis() {
                 yy = d3.event.y;
             })
             .on("drag", function (d, i) {
+<<<<<<< HEAD
                 //console.log("resta:", xi,yi);
+=======
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                 coordination(d3.event.x, d3.event.y);
             })
             .on("end", function () {
 
             });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
         var svgpad = d3.select(idviewpad).append("svg")
             .attr("x", 0)
             .attr("y", 0)
@@ -882,6 +1719,7 @@ function GraphVis() {
             .attr("fill", "#ffdb56")
             .call(dragpad)
             .on("click", function () {
+<<<<<<< HEAD
                 //var coords = d3.mouse(this);
                 //coordination(coords[0], coords[1]);
                 //console.log(coords);    
@@ -893,6 +1731,12 @@ function GraphVis() {
         //     .attr("cy", wwwd/2)
         //     .attr("r", wwwd/5)
         //     .style("fill", "purple");    
+=======
+
+            });
+
+        svgpad.append("g");
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 
         function coordination(x, y) {
             if (x >= 0 && y >= 0 && x < wwwd && y < wwwd) {
@@ -901,10 +1745,14 @@ function GraphVis() {
 
                 cx = (xi / wwwd) * 17.0;
                 cy = (yi / wwwd) * 17.0;
+<<<<<<< HEAD
                 //console.log("QQWEAA",cx, cy);
                 self.layoutfeatures.translatte(cx, cy);
                 //                layoutfeatures.scalle(2.0);
                 //circleSelection.attr("transform", "translate(" + x + "," + y+ ")");
+=======
+                self.layoutfeatures.translatte(cx, cy);
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
             }
         }
     };
@@ -912,6 +1760,7 @@ function GraphVis() {
     this.plotpaiercorrelate = function () {
         if (self.featureselected.length >= 2) {
             d3.select("#visp").selectAll("svg").remove();
+<<<<<<< HEAD
 
             chart_correlation("#visp", self.dataload, self.featureselected, gvalue('target'));
             //        chart_correlation_hist("#visp", dataload, featrs);
@@ -997,12 +1846,83 @@ function GraphVis() {
         ob.event = function () {
             response = this.ou;
             //console.log("responseresponseresponse",response);
+=======
+            chart_correlation("#visp", self.dataload, self.featureselected, gvalue('target'));
+        }
+        MOPRO.hide();
+    };
+    
+/*     this.featureCheck = function (feid, feva) {
+        var ob = new ServiceData("unselected feature");
+        ob.in.argms["type"] = 22;
+        ob.in.argms["file"] = self.datafileselected;
+        ob.in.argms["feid"] = feid;
+        ob.in.argms["feva"] = feva;
+        ob.event = function () {
+            response = this.ou;
+            if (response["response"] != 0) {
+
+            }
+        };
+        ob.start();
+    }; */
+
+
+    this.getUnselecteFeatures = function () {
+        var ob = new ServiceData("get unselected features");
+        ob.in.argms["type"] = 22;
+        ob.in.argms["file"] = self.datafileselected;
+        ob.event = function () {
+            //self.USFOBJ.unselectedfeatures = this.ou["response"];
+            //console.log("this.ou", this.ou);
+            self.unselectedfeids = this.ou;
+            self.USFOBJ.init();
+            self.USFOBJ.load();
+            self.USFOBJ.print();
+        };
+        ob.start();
+    };
+
+
+
+
+
+    this.dropdataset = function (iddb) {
+        var ob = new ServiceData("drop dataset");
+        ob.in.argms["type"] = 10;
+        ob.in.argms["file"] = iddb;
+        ob.event = function () {
+            response = this.ou;
+            self.loadlayoutdbs();
+        };
+        ob.start();
+    };
+
+    this.sharedataset = function (iddb) {
+        var ob = new ServiceData("share dataset");
+        ob.in.argms["type"] = 8;
+        ob.in.argms["file"] = iddb;
+        ob.event = function () {
+            response = this.ou;
+            self.loadlayoutdbs();
+        };
+        ob.start();
+    };
+
+    this.unsharedataset = function (iddb) {
+        var ob = new ServiceData("unshare dataset");
+        ob.in.argms["type"] = 9;
+        ob.in.argms["file"] = iddb;
+        ob.event = function () {
+            response = this.ou;
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
             self.loadlayoutdbs();
         };
         ob.start();
     };
 
     this.clonedataset = function (iddb) {
+<<<<<<< HEAD
         if (confirm("Are you sure to clone the dataset?")) {
             var ob = new ServiceData();
             ob.in.argms["type"] = 7;
@@ -1015,6 +1935,16 @@ function GraphVis() {
             };
             ob.start();
         }
+=======
+        var ob = new ServiceData("clone dataset");
+        ob.in.argms["type"] = 7;
+        ob.in.argms["file"] = iddb;
+        ob.event = function () {
+            response = this.ou;
+            self.loadlayoutdbs();
+        };
+        ob.start();
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
     };
 
     this.downloaddataset = function (iddb) {
@@ -1025,6 +1955,7 @@ function GraphVis() {
         window.location.href = url;
     };
 
+<<<<<<< HEAD
     this.export2dproj = function () {
         datin = new DataIO();
         datin.argms["type"] = 16;
@@ -1059,25 +1990,91 @@ function GraphVis() {
 
                     //gelem('layoutchangenametxtdb').style.display = 'none';
                     //gelem('iddatasettitle').style.display = 'block';
+=======
+    this.export2dprojwhole = function () {
+        /* datin = new DataIO();
+        datin.argms["type"] = 16;
+        datin.argms["file"] = self.datafileselected;
+        var url = "./query?data=" + JSON.stringify(datin);
+        window.location.href = url; */
+    };
+
+    this.export2dprojselected = function () {
+        /* datin = new DataIO();
+        datin.argms["type"] = 16;
+        datin.argms["file"] = self.datafileselected;
+        var url = "./query?data=" + JSON.stringify(datin);
+        window.location.href = url; */
+    };
+
+    this.exportfeat2datafile = function () {   
+        if(Object.keys(self.datagff.layoutfeature.graph.nodes).length){
+            MOPRO.show("download .data file");
+            datin = new DataIO();
+            datin.argms["type"] = 17;
+            datin.argms["file"] = self.datafileselected;
+            var url = "./query?data=" + JSON.stringify(datin);
+            window.location.href = url;
+            /*
+            window.open(
+                url,
+                '_blank'
+                );
+            */
+            MOPRO.hide();
+            
+            /* setTimeout( function () {
+
+            }
+            , 1); */
+
+        }
+    };
+
+    this.updatedatasetname = function (e, newname) {
+        newname = trim(newname);
+        if (e.keyCode === 13) {
+            if (self.datafileselected != "" && newname != "") {
+                var ob = new ServiceData("update dataset name");
+                ob.in.argms["type"] = 6;
+                ob.in.argms["file"] = self.datafileselected;
+                ob.in.argms["newname"] = newname;
+                ob.event = function () {
+                    response = this.ou;
+                    self.getdatasetname();
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                 };
                 ob.start();
             }
         }
     };
 
+<<<<<<< HEAD
+=======
+    this.logout = function () {
+        window.location.href = "./logout";
+    };
+
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
     this.changepassword = function () {
         pass = gelem("ipassword").value;
         npass = gelem("inpassword").value;
         rpass = gelem("inpasswordr").value;
+<<<<<<< HEAD
         //console.log("0000000000");
         if (pass != "" && npass != "" && rpass != "") {
             //console.log("111111111", pass, npass);
             if (npass == rpass) {
                 //console.log("2222222222");
+=======
+        if (pass != "" && npass != "" && rpass != "") {
+            if (npass == rpass) {
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                 var ob = new ServiceData("change password");
                 ob.in.argms["type"] = 11;
                 ob.in.argms["password"] = pass;
                 ob.in.argms["newpassword"] = npass;
+<<<<<<< HEAD
 
                 ob.event = function () {
                     response = this.ou;
@@ -1086,6 +2083,13 @@ function GraphVis() {
                         window.location.href = "./logout";
                     }
                     //console.log(response["response"]);
+=======
+                ob.event = function () {
+                    response = this.ou;
+                    if (response["response"] == 1) {
+                        self.mw.alert("","The new password was saved!", self.logout);
+                    }
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                 };
                 ob.start();
             }
@@ -1093,6 +2097,7 @@ function GraphVis() {
     };
 
     this.silhouette = function () {
+<<<<<<< HEAD
         var ob = new ServiceData("compute silhouette");
         ob.in.argms["type"] = 13;
         ob.in.argms["file"] = self.datafileselected;
@@ -1102,12 +2107,23 @@ function GraphVis() {
             //console.log("response silhouette", response);
             gelem("topleft2").innerHTML = "SILHOUETTE: " + response;
 
+=======
+        var status = "compute silhouette";
+        var ob = new ServiceData(status);
+        ob.in.argms["type"] = 13;
+        ob.in.argms["file"] = self.datafileselected;
+        ob.in.argms["statusval"] = status;
+        ob.event = function () {
+            response = this.ou;
+            gelem("topleft2").innerHTML = "SILHOUETTE: " + response;
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
         };
         ob.start();
     };
 
 
     this.changeintarget = function () {
+<<<<<<< HEAD
         var el = gelem("btnintarget");
         if (self.intargetaction) {
             el.style.backgroundColor = '#ffd70f';
@@ -1119,6 +2135,15 @@ function GraphVis() {
                 var taindex = self.lfenamesindex[self.target];
                 for (var i in self.featureselected) {
                     e = self.featureselected[i];
+=======
+        if (self.intargetaction) {
+            self.intarget = true;
+            self.intargetaction = false;
+            if (self.featureselected.length > 0) {
+                var istargetinclude = false;
+                var taindex = self.auxfeatureselectedf[self.target];
+                for (var e of self.featureselected) {
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                     if (e == taindex) {
                         istargetinclude = true;
                         break;
@@ -1133,11 +2158,18 @@ function GraphVis() {
             }
         }
         else {
+<<<<<<< HEAD
             el.style.backgroundColor = '#f1f1f1';
             self.intarget = false;
             self.intargetaction = true;
             ref = [];
             taindex = self.lfenamesindex[self.target];
+=======
+            self.intarget = false;
+            self.intargetaction = true;
+            ref = [];
+            taindex = self.auxfeatureselectedf[self.target];
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
             for (var i in self.featureselected) {
                 e = self.featureselected[i];
                 if (e != taindex) {
@@ -1149,6 +2181,31 @@ function GraphVis() {
                 self.layoutfeatures.highlightforce(self.featureselected);
             }
         }
+<<<<<<< HEAD
+=======
+        self.changeintargetbtn();
+    };
+    
+    this.changeintargetbtn = function () {
+        var el = gelem("btnintarget");
+        if (self.intargetaction) {
+            el.style.backgroundColor = '#f1f1f1';
+        }
+        else{
+            el.style.backgroundColor = '#ffd70f';
+        }
+    };
+
+    this.getNode = function(i){
+        //return this.dataoutfeature.layoutfeature["graph"].nodes[i];
+        return self.datagff.layoutfeature["graph"].nodes[i];
+    };
+
+    //listfeatures
+    this.showstatuspanel = function(ou){
+        self.shifflayoutcontrols("idstatedataset");
+        gelem("idstatusval").innerHTML = ou["statusval"];
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
     };
 
     this.shifflayoutcontrols = function (el) {
@@ -1158,18 +2215,37 @@ function GraphVis() {
         gelem("iddatasetlayout").style.display = "none";
         gelem("idaboutlayout").style.display = "none";
         gelem("mainlayout").style.display = "none";
+<<<<<<< HEAD
 
+=======
+        gelem("idstatedataset").style.display = "none";
+        
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
         gelem(el).style.display = "block";
     };
 
     this.showedgebundlingX = function () {
         if (self.layoutfeatures.isupdatebundling) {
+<<<<<<< HEAD
             setTimeout(showloading, 1);
+=======
+
+            setTimeout( function () {
+                            MOPRO.show("making edge bundling");
+                        }
+                        , 1);
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
         }
         setTimeout(self.layoutfeatures.showedgebundling, 500);
     };
 
     this.main = function () {
+<<<<<<< HEAD
+=======
+        MOPRO.main();
+        self.mw.main();
+        
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
         self.loaddatasets();
         self.shifflayoutcontrols("iddatasetlayout");
         self.padmove(100);
@@ -1194,6 +2270,7 @@ function GraphVis() {
         gelem("idlayout2bar").style.maxHeight = self.lwidth + "px";
         gelem("idlayout2bar").style.minHeight = self.lwidth + "px";
 
+<<<<<<< HEAD
         if (graphvis.adminid==1 && graphvis.multiuser==1){
             gelem("iduserlistop").style.display = "block";
         }
@@ -1276,12 +2353,105 @@ function GraphVis() {
             }
             //console.log(txtfilter[i], self.lfenamesindex);
 
+=======
+        if (self.adminid==1 && self.multiuser==1){
+            gelem("iduserlistop").style.display = "block";
+        }
+        
+
+        document.addEventListener('keydown', (event) => {
+            self.setkey(event);
+        });
+        document.addEventListener('keyup', (event) => {
+            self.hidekey();
+        });
+        self.hidekey();
+
+        CCTT.main();
+
+    };
+
+    this.fullScreen = function () {
+        var isInFullScreen = (document.fullscreenElement && document.fullscreenElement !== null) ||
+        (document.webkitFullscreenElement && document.webkitFullscreenElement !== null) ||
+        (document.mozFullScreenElement && document.mozFullScreenElement !== null) ||
+        (document.msFullscreenElement && document.msFullscreenElement !== null);
+
+        if (!isInFullScreen) {
+            self.setfullScreen();
+        } else {
+            self.exitfullScreen();
+        }
+    };
+
+    this.setfullScreen = function () {
+        var docElm = document.documentElement;
+        if (docElm.requestFullscreen) {
+            docElm.requestFullscreen();
+        } else if (docElm.mozRequestFullScreen) {
+            docElm.mozRequestFullScreen();
+        } else if (docElm.webkitRequestFullScreen) {
+            docElm.webkitRequestFullScreen();
+        } else if (docElm.msRequestFullscreen) {
+            docElm.msRequestFullscreen();
+        }
+    };
+
+    this.exitfullScreen = function () {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+    };
+    
+    this.save_as_svg = function (idp,title) {
+        $.get("./lib/style.css", function (cssContent) {
+            d3.select(idp).select("svg")
+                .append("defs").append("style").attr("type", "text/css").html(cssContent);
+
+            var html = d3.select(idp).select("svg")
+                .attr("version", 1.1)
+                .attr("xmlns", "http://www.w3.org/2000/svg")
+                .node().parentNode.innerHTML;
+
+            var imgsrc = 'data:image/svg+xml;base64,' + btoa(html);
+
+            gelem("svgdataurl").href = "";
+            gelem("svgdataurl").download = self.datafileselectedname+"_"+title;
+
+            gelem("svgdataurl").href = imgsrc;
+            gelem("svgdataurl").click();
+        });
+    };
+
+    this.featureselectionbyfiltername = function (txt2filter) {
+        featsel = [];
+        txtfilter = txt2filter.split(';');
+        nfilter = [];
+        for (var wd of txtfilter) {
+            wd = trim(wd);
+            if (wd in self.auxfeatureselectedf) {
+                index = self.auxfeatureselectedf[wd]
+                featsel.push(index);
+                nfilter.push(wd);
+            }
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
         }
         if (featsel.length > 0) {
             self.featureselected = featsel;
             self.layoutfeatures.highlightforce(self.featureselected);
+<<<<<<< HEAD
         }
         //console.log(txtfilter);
+=======
+            gelem("fesenanetxt").value = nfilter.join(';');
+        }
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
     };
 
     this.setToolpiltex = function (ex, ey, txt) {
@@ -1299,6 +2469,7 @@ function GraphVis() {
 
     this.setkey = function (event) {
         if (event.ctrlKey || event.altKey ) {
+<<<<<<< HEAD
             //console.log("control key");
             self.ispresskey = 1;
         }
@@ -1329,6 +2500,33 @@ function GraphVis() {
 
                 datfe.push({
                     "label": self.lfenames[e],
+=======
+            self.ispresskey = 1;
+            //console.log("event.ctrlKey || event.altKey");
+        }
+        else if (event.shiftKey) {
+            self.ispresskey = 2;
+            //console.log(event.shiftKey);
+        }
+
+    };
+    this.hidekey = function () {
+        self.ispresskey = 0;
+        //console.log("self.ispresskey", self.ispresskey);
+    };
+
+    this.viewFeaturesSelected = function (opt) {
+        let datfe = [];
+        let maxv = -1;
+        let title = "";
+        if (opt == "feature") {
+            title = self.datagff.configfeature.relevance;
+            for (var i of self.featureselected) {
+                var item = self.getNode(i);
+                score = self.datagff.configfeature.nodes[item.name].weight;
+                datfe.push({
+                    "label": item.label,
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                     "color": VertexColorF(score),
                     "score": score,
                     "scorenorm": score,
@@ -1337,6 +2535,10 @@ function GraphVis() {
                     maxv = score;
                 }
             }
+<<<<<<< HEAD
+=======
+
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
             for (var i in datfe) {
                 datfe[i]["scorenorm"] = datfe[i]["scorenorm"] / maxv;
             }
@@ -1344,6 +2546,7 @@ function GraphVis() {
             chart_circularhist(datfe, "#featselectfeaturecontent", 500, 500);
         }
         else if (opt == "instance") {
+<<<<<<< HEAD
             //console.log("self.dataoutinstance.configinstance",self.dataoutinstance);
             var featt = self.dataoutinstance.configinstance.featureselected;
             //var rank = self.dataoutinstance.configinstance.ranking;
@@ -1354,6 +2557,16 @@ function GraphVis() {
                 score = rank[e]["weight"];
                 datfe.push({
                     "label": self.lfenames[e],
+=======
+            title = self.datagff.layoutinstance.configinstance.relevance;
+            var featt = self.datagff.layoutinstance.configinstance.featureselected;
+            for (var e of featt) {
+                var i = self.auxfeatureselectedi[self.datagff.fenames[e]];
+                var item = self.datagff.layoutinstance.configinstance.nodes[i];
+                score = item.weight;
+                datfe.push({
+                    "label": item.label,
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                     "color": VertexColorF(score),
                     "score": score,
                     "scorenorm": score,
@@ -1380,6 +2593,7 @@ function GraphVis() {
     };
 
     this.initradiallayout = function () {
+<<<<<<< HEAD
         //self.layoutfeatures.isradiallayout = true;
         //self.layoutfeatures.isupdatebundling = false;
         self.layoutfeatures.initradiallayout();
@@ -1391,6 +2605,13 @@ function GraphVis() {
     this.changecolorstable = function (c) {
         //console.log("c", c);
         if(graphvis.colorstableshitttype==1){
+=======
+        self.layoutfeatures.initradiallayout();
+    };
+
+    this.changecolorstable = function (c) {
+        if(self.colorstableshitttype==1){
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
             CCTT.id = c;
             VertexColorF = CCTT.interpolate();
 
@@ -1399,19 +2620,29 @@ function GraphVis() {
 
             self.layoutfeatures.vertexcolorf = VertexColorF;
             self.layoutfeatures.updatecolors();
+<<<<<<< HEAD
 
         }
         else if(graphvis.colorstableshitttype==2){
+=======
+        }
+        else if(self.colorstableshitttype==2){
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
             CCTT.id = c;
             EdgeColorF = CCTT.interpolate();
             chart_histogram(self.setToolpiltex,
                 self.hideToolpiltex,
                 self.layoutfeatures.updatelinkoption,
+<<<<<<< HEAD
                 "seqedgehist", self.lwidth, EdgeColorF, self.dataoutfeature.layoutfeature["edgehist"]);
+=======
+                "seqedgehist", self.lwidth, EdgeColorF, self.datagff.layoutfeature["edgehist"]);
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 
             self.layoutfeatures.edgecolorf = EdgeColorF;
             self.layoutfeatures.drawedges();
         }
+<<<<<<< HEAD
         else if(graphvis.colorstableshitttype==3){
             //console.log("self.layoutintantes1", self.layoutintantes.projectioncolorf);
             CCTT.id = c;
@@ -1420,10 +2651,19 @@ function GraphVis() {
 
             self.layoutintantes.projectioncolorf = ProjectionColorF;
             self.layoutintantes.updatecolors();
+=======
+        else if(self.colorstableshitttype==3){
+            CCTT.id = c;
+            ProjectionColorF = CCTT.interpolate();
+
+            self.layoutinstance.projectioncolorf = ProjectionColorF;
+            self.layoutinstance.updatecolors();
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
         }
     };
 }
 
+<<<<<<< HEAD
 $(document).ready(function () {
     $('#idtextdbname').focusout(function () {
         graphvis.getdatasetname();
@@ -1440,3 +2680,72 @@ function opendatsetparser(fid) {
 
 
 let graphvis = new GraphVis();
+=======
+
+/**
+ * Others auxiliar methods
+ */
+/* $(document).ready(function () {
+    $('#idtextdbname').focusout(function () {
+        GFFOBJ.getdatasetname();
+        GFFOBJ.fullScreen();
+    });
+}); */
+function opendatsetparser() {
+    //self.fullScreen();
+    GFFOBJ.loadlayoutdbs();
+}
+function mwalert(title, txtbody) {
+    //self.fullScreen();
+    GFFOBJ.mw.alert(title, txtbody);
+}
+/* function showloading(title, txtbody) {
+    //self.fullScreen();
+    MOPRO.show(title);
+} */
+
+
+/***
+* function: Load Object recursively
+*/
+function loadObject(work, obj, list, count, dataset, functpro, functend, functbusy, type) {
+    if(count<list.length){
+        MOPRO.status((count*100.0)/list.length);
+        let ob = new ServiceData(work+" ("+(count+1)+" of "+list.length+")");
+        ob.in.argms["type"] = type;
+        ob.in.argms["file"] = dataset;
+        ob.in.argms["data"] = list[count];
+        ob.event = function () {
+            switch (this.ou["statusopt"]) {
+                // ok
+                case 0:
+                    //console.log("out", out, this.in.argms["data"]);
+                    //update obj
+                    functpro.apply(this, [obj, this.ou]);
+
+                    /* var timer = setTimeout(
+                        function(){
+                        },1000); */
+                    count++;
+                    loadObject(work, obj, list, count, dataset, functpro, functend, functbusy, type);
+                    break;
+                // working
+                case 1:
+                    functbusy.apply(this,[this.ou]);
+                    break;
+                // error
+                case 2:
+    
+                    break;
+                //default:
+                    
+            };
+        };
+        ob.start();
+    }
+    else{
+        //execute function when end
+        functend.apply(this, [obj]);
+    }
+};
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974

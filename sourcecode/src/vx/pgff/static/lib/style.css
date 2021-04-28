@@ -191,11 +191,19 @@ table{
 
 
 .resultssearch{
+<<<<<<< HEAD
     padding: 3px;
     
 }
 .resultssearch:hover{
     background-color:#8253bb;  color: #fff;
+=======
+    padding: 0px;
+    margin: 0px;
+}
+.resultssearch:hover{
+    background-color:#282053;  color: #fff;
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
     cursor: pointer;
 }
 
@@ -228,6 +236,7 @@ table{
 
 
 
+<<<<<<< HEAD
 /* Bootstrap 4 text input with search icon */
 .has-search .form-control {
   padding-left: 2.375rem;
@@ -243,6 +252,81 @@ table{
   text-align: center;
   pointer-events: none;
   color: #aaa;
+=======
+
+
+
+
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+  cursor: pointer;
+  /* font-size: 11px; */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* border: solid 1px #ff0000; */
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  margin-top: 3px;
+  margin-left: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 12px;
+  width: 12px;
+  background-color: #0d66db;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #0d66db;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #ff0000;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 5px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid #ff0000;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 }
 
 

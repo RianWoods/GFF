@@ -36,23 +36,38 @@ function polygonToPath(polygon) {
 
 
 
+<<<<<<< HEAD
 function plotProjection(projectioncolorf, idview, selft, dat, argms) {
+=======
+function plotProjection(projectioncolorf, idview, selfgff, argms) {
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
     var self = this;
 
     this.projectioncolorf = projectioncolorf;
     //console.log("dat",dat);
     //console.log("argms",argms);
 
+<<<<<<< HEAD
     gelem(argms["infleft"]).innerHTML = "TOTAL: " + dat.points.length;
     var data = dat.points;
     var targetsize = Object.keys(dat.tartegsnames).length;
+=======
+    gelem(argms["infleft"]).innerHTML = "TOTAL: " + selfgff.datagff.layoutinstance.points.length;
+    var data = selfgff.datagff.layoutinstance.points;
+    var targetsize = Object.keys(selfgff.datagff.layoutinstance.tartegsnames).length;
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
     
     //var colors = dat.tartegscolors;
     var issel = 1;
 
     var margin = { top: 0, right: 0, bottom: 0, left: 0 },
+<<<<<<< HEAD
         width = selft.lwidth,
         height = selft.lwidth;
+=======
+        width = selfgff.lwidth,
+        height = selfgff.lwidth;
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 
     // setup x
     var xValue = function (d) { return d.x; }, // data -> value
@@ -173,7 +188,11 @@ function plotProjection(projectioncolorf, idview, selft, dat, argms) {
     /////////////////////////////////////////////////////////    
 
     var opxy = 0.5;
+<<<<<<< HEAD
     var sizexy = selft.instvertexratio;
+=======
+    var sizexy = selfgff.instvertexratio;
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
     var sizebr = 1.75;
 
     self.nodesc = self.container.append("g").selectAll(".dot");
@@ -185,7 +204,11 @@ function plotProjection(projectioncolorf, idview, selft, dat, argms) {
         .attr("r", sizexy)
         .attr("cx", xMap)
         .attr("cy", yMap)
+<<<<<<< HEAD
         .style("opacity", selft.instvertexoacity)
+=======
+        .style("opacity", selfgff.instvertexoacity)
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
         .style('stroke', 'white')
         .style('stroke-width', sizebr)
         .style("fill", function (d) {
@@ -194,16 +217,34 @@ function plotProjection(projectioncolorf, idview, selft, dat, argms) {
 
             })
         .on("mouseover", function (d) {
+<<<<<<< HEAD
             //**alter(d);
             //showfloatwind(d.id);
             //console.log("xxxxx");
         })
         .on("mouseout", function (d) {
+=======
+            //var point = d3.mouse(this);
+
+            //**alter(d);
+            //showfloatwind(d.id);
+            //console.log("xxxxx");
+            selfgff.setToolpiltex(
+                d3.event.pageX,
+                d3.event.pageY,
+                "ID:"+selfgff.idinstancelabel[d.id]+""
+                );
+
+        })
+        .on("mouseout", function (d) {
+            selfgff.hideToolpiltex();
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
             //hidefloatwind();
             //console.log("xxxxx");
         })
         .merge(self.nodesc);
 
+<<<<<<< HEAD
     self.nodesc.append("title")
         .text(function (d) { return "Label: " + d.label; });
 
@@ -211,6 +252,21 @@ function plotProjection(projectioncolorf, idview, selft, dat, argms) {
         d3.select(view).selectAll("circle")
             .attr("r", selft.instvertexratio)
             .style("opacity", selft.instvertexoacity)
+=======
+        /*     
+        self.nodesc.append("title")
+        .text(function (d) {
+            //console.log("d.id", d.id, selfgff.idinstancelabel);
+            return "ID: " + selfgff.idinstancelabel[d.id]; 
+            
+            });
+         */
+
+    this.highlight = function (view, ids) {
+        d3.select(view).selectAll("circle")
+            .attr("r", selfgff.instvertexratio)
+            .style("opacity", selfgff.instvertexoacity)
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
             .style("stroke", "white");
 
         //var selectionBArray = d3.select(view).selectAll("dot").nodes();
@@ -225,8 +281,13 @@ function plotProjection(projectioncolorf, idview, selft, dat, argms) {
 
     this.updatesizeandopacity = function () {
         d3.select(idview).selectAll("circle")
+<<<<<<< HEAD
         .attr("r", selft.instvertexratio)
         .style("opacity", selft.instvertexoacity);
+=======
+        .attr("r", selfgff.instvertexratio)
+        .style("opacity", selfgff.instvertexoacity);
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
     };
 
     this.updatecolors = function () {
@@ -251,16 +312,68 @@ function plotProjection(projectioncolorf, idview, selft, dat, argms) {
 
     };
 
+<<<<<<< HEAD
     this.exportidsinstancesselected = function() {
         var txtex = "";
         for (var i in self.selected){
             txtex += self.selected[i]+"\n";
+=======
+    this.exwholeinstancesprj = function() {
+        var txtex = "DY\n"+data.length+"\n2\nx;y\n";
+        for (var i in data){
+            txtex += selfgff.idinstancelabel[i]+";"+data[i].x+";"+data[i].y+";"+data[i].t+"\n";
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
         }
         var hiddenElement = document.createElement('a');
         hiddenElement.href = 'data:text/txt;charset=utf-8,' + encodeURI(txtex);
         hiddenElement.target = '_blank';
+<<<<<<< HEAD
         hiddenElement.download = 'output.txt';
         hiddenElement.click();
+=======
+        hiddenElement.download = selfgff.datafileselectedname+'_selected.prj';
+        hiddenElement.click();
+
+/*         gelem("idaddhide").appendChild(hiddenElement);
+        var olddata=gelem("idaddhide").lastChild;
+        gelem("idaddhide").removeChild(olddata); */
+    };
+
+    this.exselectedinstancesprj = function() {
+        if (self.selected.length>0){        
+            var txtex = "DY\n"+self.selected.length+"\n2\nx;y\n";
+            for (var i of self.selected){
+                txtex += selfgff.idinstancelabel[i]+";"+data[i].x+";"+data[i].y+";"+data[i].t+"\n";
+            }
+            var hiddenElement = document.createElement('a');
+            hiddenElement.href = 'data:text/txt;charset=utf-8,' + encodeURI(txtex);
+            hiddenElement.target = '_blank';
+            hiddenElement.download = selfgff.datafileselectedname+'_selected.prj';
+            hiddenElement.click();
+
+    /*         gelem("idaddhide").appendChild(hiddenElement);
+            var olddata=gelem("idaddhide").lastChild;
+            gelem("idaddhide").removeChild(olddata); */
+        }
+    };
+
+    this.exidsinstancesprj = function() {
+        if (self.selected.length>0){
+            var txtex = "";
+            for (var i of self.selected){
+                txtex += selfgff.idinstancelabel[i]+"\n";
+            }
+            var hiddenElement = document.createElement('a');
+            hiddenElement.href = 'data:text/txt;charset=utf-8,' + encodeURI(txtex);
+            hiddenElement.target = '_blank';
+            hiddenElement.download = selfgff.datafileselectedname+'_ids.txt';
+            hiddenElement.click();
+
+    /*         gelem("idaddhide").appendChild(hiddenElement);
+            var olddata=gelem("idaddhide").lastChild;
+            gelem("idaddhide").removeChild(olddata); */
+        }
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
     };
 
 }

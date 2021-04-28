@@ -26,6 +26,10 @@ function ColorPalette(id="rainbow") {
         "warm":{"colors":["#6e40aa","#6f40aa","#7140ab","#723fac","#743fac","#753fad","#773fad","#783fae","#7a3fae","#7c3faf","#7d3faf","#7f3faf","#803eb0","#823eb0","#833eb0","#853eb1","#873eb1","#883eb1","#8a3eb2","#8b3eb2","#8d3eb2","#8f3db2","#903db2","#923db3","#943db3","#953db3","#973db3","#983db3","#9a3db3","#9c3db3","#9d3db3","#9f3db3","#a13db3","#a23db3","#a43db3","#a63cb3","#a73cb3","#a93cb3","#aa3cb2","#ac3cb2","#ae3cb2","#af3cb2","#b13cb2","#b23cb1","#b43cb1","#b63cb1","#b73cb0","#b93cb0","#ba3cb0","#bc3caf","#be3caf","#bf3caf","#c13dae","#c23dae","#c43dad","#c53dad","#c73dac","#c83dac","#ca3dab","#cb3daa","#cd3daa","#ce3da9","#d03ea9","#d13ea8","#d33ea7","#d43ea7","#d53ea6","#d73ea5","#d83fa4","#da3fa4","#db3fa3","#dc3fa2","#de3fa1","#df40a0","#e040a0","#e2409f","#e3409e","#e4419d","#e5419c","#e7419b","#e8429a","#e94299","#ea4298","#eb4397","#ed4396","#ee4395","#ef4494","#f04493","#f14592","#f24591","#f34590","#f4468f","#f5468e","#f6478d","#f7478c","#f8488b","#f9488a","#fa4988","#fb4987","#fc4a86","#fd4a85","#fe4b84","#fe4b83","#ff4c81","#ff4d80","#ff4d7f","#ff4e7e","#ff4e7d","#ff4f7b","#ff507a","#ff5079","#ff5178","#ff5276","#ff5275","#ff5374","#ff5473","#ff5572","#ff5570","#ff566f","#ff576e","#ff586d","#ff586b","#ff596a","#ff5a69","#ff5b68","#ff5c66","#ff5d65","#ff5d64","#ff5e63","#ff5f61","#ff6060","#ff615f","#ff625e","#ff635d","#ff645b","#ff655a","#ff6659","#ff6758","#ff6857","#ff6956","#ff6a54","#ff6b53","#ff6c52","#ff6d51","#ff6e50","#ff6f4f","#ff704e","#ff714d","#ff724c","#ff734b","#ff744a","#ff7549","#ff7648","#ff7847","#ff7946","#ff7a45","#ff7b44","#ff7c43","#ff7d42","#ff7e41","#ff8040","#ff813f","#ff823e","#ff833d","#ff843d","#ff863c","#ff873b","#ff883a","#ff893a","#ff8a39","#ff8c38","#ff8d37","#ff8e37","#ff8f36","#fe9136","#fd9235","#fd9334","#fc9534","#fb9633","#fa9733","#f99832","#f99a32","#f89b32","#f79c31","#f69d31","#f59f30","#f4a030","#f3a130","#f2a32f","#f1a42f","#f0a52f","#efa62f","#eea82f","#eda92e","#ecaa2e","#ebac2e","#eaad2e","#e9ae2e","#e8b02e","#e7b12e","#e6b22e","#e5b32e","#e4b52e","#e3b62e","#e2b72f","#e1b92f","#e0ba2f","#dfbb2f","#debc30","#ddbe30","#dbbf30","#dac030","#d9c131","#d8c331","#d7c432","#d6c532","#d5c633","#d4c833","#d3c934","#d2ca34","#d1cb35","#cfcc36","#cece36","#cdcf37","#ccd038","#cbd138","#cad239","#c9d33a","#c8d53b","#c7d63c","#c6d73c","#c5d83d","#c4d93e","#c3da3f","#c2db40","#c1dc41","#c0dd42","#bfdf43","#bee044","#bde146","#bce247","#bbe348","#bae449","#b9e54a","#b8e64b","#b7e74d","#b6e84e","#b6e94f","#b5ea51","#b4ea52","#b3eb53","#b2ec55","#b1ed56","#b1ee58","#b0ef59","#aff05b"]},
         "spectral":{"colors":["#9e0142","#a00343","#a20643","#a40844","#a70b44","#a90d45","#ab0f45","#ad1245","#af1446","#b11646","#b31947","#b51b47","#b71d48","#ba2048","#bc2248","#be2449","#c02749","#c12949","#c32b4a","#c52d4a","#c7304a","#c9324a","#cb344b","#cd364b","#ce384b","#d03b4b","#d23d4b","#d33f4b","#d5414b","#d7434b","#d8454b","#da474a","#db494a","#dd4b4a","#de4d4a","#df4f4a","#e1514a","#e2534a","#e35549","#e45749","#e65949","#e75b49","#e85d49","#e95f49","#ea6149","#eb6349","#ec6549","#ed6749","#ee6a49","#ef6c49","#f06e4a","#f0704a","#f1724a","#f2744b","#f3774b","#f3794c","#f47b4d","#f47e4d","#f5804e","#f6824f","#f68550","#f78750","#f78951","#f88c52","#f88e53","#f89154","#f99356","#f99557","#f99858","#fa9a59","#fa9c5a","#fa9f5c","#fba15d","#fba35e","#fba660","#fba861","#fcaa62","#fcad64","#fcaf65","#fcb167","#fcb368","#fcb56a","#fdb86b","#fdba6d","#fdbc6e","#fdbe70","#fdc071","#fdc273","#fdc474","#fdc676","#fdc878","#fdca79","#fecc7b","#fecd7d","#fecf7e","#fed180","#fed382","#fed584","#fed685","#fed887","#feda89","#fedb8b","#fedd8d","#fede8f","#fee090","#fee192","#fee394","#fee496","#fee698","#fee79a","#fee89b","#feea9d","#feeb9f","#feeca1","#feeda2","#feefa4","#fef0a5","#fef1a7","#fef2a8","#fdf3a9","#fdf3aa","#fdf4ab","#fdf5ac","#fcf6ad","#fcf6ae","#fcf7af","#fbf7af","#fbf8b0","#faf8b0","#faf9b0","#f9f9b0","#f9f9b0","#f8f9b0","#f7faaf","#f7faaf","#f6faae","#f5faae","#f4f9ad","#f3f9ac","#f2f9ac","#f2f9ab","#f0f9aa","#eff8a9","#eef8a8","#edf8a7","#ecf7a7","#ebf7a6","#e9f6a5","#e8f6a4","#e7f5a3","#e5f5a2","#e4f4a2","#e2f3a1","#e0f3a1","#dff2a0","#ddf1a0","#dbf19f","#d9f09f","#d7ef9f","#d6ee9f","#d4ee9f","#d2ed9e","#d0ec9e","#cdeb9f","#cbea9f","#c9e99f","#c7e89f","#c5e89f","#c3e79f","#c0e6a0","#bee5a0","#bce4a0","#b9e3a0","#b7e2a1","#b4e1a1","#b2e0a1","#b0dfa1","#addea2","#abdda2","#a8dca2","#a6dba3","#a3daa3","#a0d9a3","#9ed8a3","#9bd7a3","#99d6a4","#96d5a4","#94d4a4","#91d3a4","#8ed1a4","#8cd0a4","#89cfa5","#87cea5","#84cda5","#82cba5","#7fcaa6","#7dc9a6","#7ac7a6","#77c6a6","#75c5a7","#73c3a7","#70c2a8","#6ec0a8","#6bbea8","#69bda9","#66bba9","#64b9aa","#62b8aa","#60b6ab","#5db4ac","#5bb2ac","#59b0ad","#57aeae","#55acae","#53aaaf","#51a8af","#50a6b0","#4ea4b1","#4ca2b1","#4ba0b2","#499db2","#489bb3","#4799b3","#4697b3","#4595b4","#4492b4","#4390b4","#438eb4","#428cb5","#4289b5","#4287b4","#4285b4","#4283b4","#4280b4","#437eb3","#437cb3","#447ab3","#4577b2","#4575b1","#4673b1","#4771b0","#486eaf","#4a6caf","#4b6aae","#4c68ad","#4e65ac","#4f63ab","#5161aa","#525fa9","#545ca8","#555aa7","#5758a6","#5956a5","#5b53a4","#5c51a3","#5e4fa2"]},
     };
+<<<<<<< HEAD
+=======
+
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
     this.shift = function(){
         var auxc = [];
         var shiftv = self.COLORST[self.id]["colors"].length-1;
@@ -34,10 +38,15 @@ function ColorPalette(id="rainbow") {
         }
         self.COLORST[self.id]["colors"] = auxc;
     };
+<<<<<<< HEAD
+=======
+
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
     this.interpolate = function(){
         return d3.interpolateRgbBasis(self.COLORST[self.id]["colors"]);
     };
 
+<<<<<<< HEAD
 }
 var CCTT = new ColorPalette();
 
@@ -149,4 +158,204 @@ function drawcolorpalette(idview, w, h, cf){
         .attr("fill", (d) => cf(d/(n-1)) );
 }
 
+=======
+    this.makeSelectionColorPalette = function(w, h){    
+        gelem("idwinmodalcolor").style.display = "block"; 
+        gelem("idwinmodalcolortitle").innerHTML = "Change colors"; 
+        gelem("idwinmodalcolorbody").innerHTML = "";
+      
+        //var cf = new ColorPalette();
+        //var cf = CF.interpolate();
+        var txtcol = `<table class="table table-striped table-responsive-md btn-table" style="margin: 0 auto">`;
+        txtcol += "<thead>"
+        txtcol += `<tr>
+                        <th>Name</th>
+                        <th>
+                            <div>
+                                <div style="float: left;">Min</div>
+                                <div style="float: right;">Max</div>
+                            </div>
+                        </th>
+                        <th>Shift</th>
+                        <th>Pick</th>
+                    <tr>`;
+        txtcol += "</thead>"
+        txtcol += "<tbody>"
+        //console.log("cf.colorsopt", cf.COLORST);
+        for(var i in CCTT.COLORST){
+            idt = `tcoloridx`+i+``;
+    
+            txtcol += `<tr title="Chosse">`;
+            txtcol += `<td>`+i+`</td>`;
+            txtcol += `<td>`;
+            txtcol += `<div id="`+idt+`" style="text-align:center"></div>`;
+            txtcol += `</td>`;
+            txtcol += `<td style="text-align:center">`;
+            txtcol += `
+            <a href="#" class="btn btn-dark btn-sm"
+                style="padding: 1px;"
+                onclick="
+                    CCTT.id = '`+i+`';
+                    CCTT.shift();
+                    ci = CCTT.interpolate();
+                    drawcolorpalette('#`+idt+`', `+w+`, `+h+`, ci);
+                "
+                title="Invert"
+            >
+                <i class="fas fa-exchange-alt fa-lg"></i>
+            </a>`;
+            txtcol += `</td>`;
+            txtcol += `<td style="text-align:center">`;
+            txtcol += `
+            <a href="#" class="btn btn-primary btn-sm"
+                style="padding: 1px;"
+                onclick="
+                    GFFOBJ.changecolorstable('`+i+`');
+                "
+            >
+                <i class="fa fa-paint-brush fa-lg"></i>
+            </a>`;
+            txtcol += `</td>`;
+            txtcol += `</tr>`;
+        }
+        txtcol += "</tbody>"
+        txtcol += "</table>";
+        gelem("idwinmodalcolorbody").innerHTML = txtcol;
+        
+        for(var i in CCTT.COLORST){
+            idt = `tcoloridx`+i+``;
+            CCTT.id = i;
+            c = self.interpolate();
+            self.drawcolorpalette("#"+idt, w, h, c);
+        }
+    
+    };
+
+    this.drawcolorpalette = function(idview, w, h, cf){
+        var n = 100;
+        var data = Array.from(Array(n).keys());
+        var xScale = d3.scaleLinear()
+            .domain([0,n-1])
+            .range([0, w]);
+    
+        d3.select(idview).selectAll("svg").remove();
+        var svgmain = d3.select(idview).append("svg")
+            .attr("width", w)
+            .attr("height", h)
+            .on("click",    function() {
+                //console.log(coords);    
+            })
+            .attr("transform", "translate(" + 0 + "," + 0 + ")")
+            .append("g");
+        
+        var palette = svgmain.append("g").selectAll(".rectclass");
+        
+        palette = palette.data(data);
+        palette.exit().remove();
+        
+        palette = palette.enter().append("rect")
+            .attr("class", "rectclass")
+            .attr("x", (d) => Math.floor(xScale(d)))
+            .attr("y", 0)
+            .attr("height", h)
+            .attr("width", (d) => {
+                // if (d == n-1) {
+                //     return 6;
+                // }
+                return Math.floor(xScale(d+1)) - Math.floor(xScale(d)) + 1;
+            })
+            .attr("fill", (d) => cf(d/(n-1)) );
+    };
+
+    this.main =  function() {
+        var win =
+        `
+        <div id="idwinmodalcolor" 
+            style="
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                margin: 0 auto;        
+                width: 600px;
+                height: 300px;
+                background-color:#e6e6e6;
+                border: 1px solid #999;
+                margin-top: -150px;
+                margin-left: -300px;
+                z-index: 10;
+                display: none;
+
+            "
+        >
+            <table style="width: 100%; height: 100%;">
+                <tr>
+                    <td style="vertical-align: middle; border-bottom: solid 1px #999;
+                        height: 25px;
+                    ">
+                        <table style="width: 100%;">
+                            <tr>
+                                <td style="vertical-align: middle;">
+                                    <div 
+                                        id="idwinmodalcolortitle"
+                                        style="
+                                            width: 100%;
+                                            margin-left: 4px;
+                                            text-align: left;
+                                            vertical-align: middle;
+                                        "
+                                    >
+                                    </div>                                    
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    <div 
+                                        style="
+                                            margin-right: 4px;
+                                            cursor: pointer;
+                                            text-align: right;
+                                        "
+                                        onclick="
+                                            gelem('idwinmodalcolor').style.display = 'none';
+                                        "
+                                        title="Close"
+                                    >
+                                        <i class="fa fa-times" style="font-size: 16px;" aria-hidden="true"></i>
+                                    </div>                                
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 240px; vertical-align: top;">
+                        <div id="idwinmodalcolorbody" style="overflow: auto; max-height: 240px;"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-top: solid 1px #999; vertical-align: middle; padding: 3px;
+                    text-align: center;
+                    ">
+                        <button type="button"
+                            class="btn btn-primary btn-sm"
+                            style="max-width: 70px; min-width: 70px"
+                            onclick="
+                            gelem('idwinmodalcolor').style.display = 'none';
+                            "
+                        >
+                            Close
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>`;
+
+        var container = document.createElement("DIV");       
+        container.id = "ColorPaletteIdx45";
+        container.innerHTML = win;
+        //console.log("container",container);
+        document.body.appendChild(container);
+    };
+    //self.init();
+}
+let CCTT = new ColorPalette();
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 

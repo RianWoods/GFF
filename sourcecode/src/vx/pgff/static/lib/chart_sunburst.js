@@ -7,6 +7,7 @@
 /**
  * Adapted from: https://github.com/vasturiano/sunburst-chart
  */
+<<<<<<< HEAD
 function chart_sunburst(idview, wsize, inp, vertexcolorf, selft, argmsi){
     var self = this;
 
@@ -15,14 +16,29 @@ function chart_sunburst(idview, wsize, inp, vertexcolorf, selft, argmsi){
     self.ranking = inp["ranking"];
     self.initv = inp["initvertex1"];
     self.initv2 = inp["initvertex2"];
+=======
+function chart_sunburst(idview, vertexcolorf, selft, argmsi){
+    var self = this;
+    self.wsize =selft.lwidth;
+    self.data = selft.datagff.layoutfeature["tree"];
+    self.graph = selft.datagff.layoutfeature["graph"];
+    self.ranking = selft.datagff.layoutfeature["ranking"];
+    self.initv = selft.datagff.layoutfeature["initvertex1"];
+    self.initv2 = selft.datagff.layoutfeature["initvertex2"];
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
     self.argms = argmsi;
     //console.log("self.data", self.data);
     
     gelem(self.argms["infleft"]).innerHTML = "TOTAL: " + Object.keys(selft.lfenamesindex).length;
 
     const vmargin = 10;
+<<<<<<< HEAD
     const width = wsize,
         height = wsize,
+=======
+    const width = self.wsize,
+        height = self.wsize,
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
         maxRadius = (Math.min(width, height) / 2) - vmargin;
 
     const formatNumber = d3.format(',d');

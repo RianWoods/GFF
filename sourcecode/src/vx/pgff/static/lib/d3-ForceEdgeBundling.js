@@ -342,8 +342,14 @@
 				//console.log('P' + P);
 				//console.log('S' + S);
 			}
+<<<<<<< HEAD
 			hideloading();
 			console.log("hideloading()");
+=======
+			MOPRO.hide();
+			//hideloading();
+			//console.log("hideloading()");
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 
 			return subdivision_points_for_edge;
 		};
