@@ -76,6 +76,7 @@ class Graph:
     def toDict(self):
         return self.__dict__;
 
+<<<<<<< HEAD
     def make_graph(self, datapath, argms):
         pmetric = argms["proximity"]
         inv1 = int(argms["p1"])
@@ -87,6 +88,18 @@ class Graph:
         filefe = datapath+argms["file"]+"/transform.csv"
         isfeature = True if int(argms["isfeature"])==1 else False
         #featureselected= argms["featureselected"]
+=======
+    def make_graph(self, datapath, unselectedfeids, argms):
+        pmetric = argms["proximity"]
+        #inv1 = int(argms["p1"])
+        #inv2 = int(argms["p2"])
+        target = argms["target"]
+        algorithm = argms["algorithm"]
+        importance = argms["relevance"]
+        filefe = datapath+argms["file"]+"/transform.csv"
+        isfeature = True if int(argms["isfeature"])==1 else False
+        #unselectedfeids = argms["unselectedfeids"]
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 
 
         #ff = "/mnt/sda1/academic/doutorado/projects/sourcecode/data/input/"+argms["file"]+"/transform.csv"
@@ -95,6 +108,7 @@ class Graph:
         #print("self._featuresnames_index", self._featuresnames_index)
         #f.close()
 
+<<<<<<< HEAD
 
         #print("featureselected",featureselected, importance)
         #print("argms",argms)
@@ -103,6 +117,14 @@ class Graph:
         colsindexes = X.columnsindexes()
         target_id = X.columnindex(target)
         attributes_id = X.columnindex(attributes)
+=======
+        #print("featureselected",featureselected, importance)
+        #print("argms",argms)
+        X = DataMatrix(filefe, unselectedfeids)
+        columns = X.columns()
+        colsindexes = X.columnsindexes()
+        target_id = X.columnindex(target)
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
         N = X.cols()
         pm_t = X.proximitymatrix_cols(pmetric)
         prox_types = ProximityMatrix.POT
@@ -158,11 +180,14 @@ class Graph:
                         
                         self.data["ranking"][node["name"]] = dr
 
+<<<<<<< HEAD
                     # elif i == attributes_id:
                         # remove attributes from nodes list
                         # graph["nodes"].delete({i})
 
 
+=======
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                 self.data["rankingmin"] = minfr_
                 self.data["rankingmax"] = maxfr_
 
