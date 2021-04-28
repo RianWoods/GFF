@@ -24,9 +24,18 @@
 <script src="./lib/d3-ForceEdgeBundling.js" charset="utf-8"></script>
 
 
+<<<<<<< HEAD
 
 <script src="./lib/User.js"></script>
 <script src="./lib/Colors.js"></script>
+=======
+<script src="./lib/Util.js"></script>
+<!-- <script src="./lib/MonitorProcess.js"></script> -->
+<script src="./lib/UnselectedFeatures.js"></script>
+<script src="./lib/User.js"></script>
+<script src="./lib/Colors.js"></script>
+<script src="./lib/Modal.js"></script>
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 <script src="./lib/layout_radial.js"></script>
 <script src="./lib/chart_palettecolors.js"></script>
 <script src="./lib/chart_circularhist.js"></script>
@@ -43,6 +52,7 @@
 <link rel="icon" href="./img/icon.png">
 
 <!-- : #907fa9 -->
+<<<<<<< HEAD
 <body style="background-color: #566078;"
     onkeydown="
         //console.log('event.shiftKey', event.ctrlKey);
@@ -113,12 +123,19 @@
         </div>
     </div>
 
+=======
+<body style="background-color: #566078;">
+
+<div id="maincontainer">
+
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
     <div id="floatdiv" style="         
          background-color: #222;
          position: absolute;
          z-index: 1000000; padding: 2px; font-weight: bold;
          border: solid 1px #a6a6a6; color: #fff; display: none; 
     ">
+<<<<<<< HEAD
         This is the floating div. asda sdfs
     </div>
 
@@ -190,10 +207,16 @@
                 </div>
             </div>
         </div>
+=======
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
     </div>
 
 
 
+<<<<<<< HEAD
+=======
+    
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
     <table style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;
            width: 100%; height: 100%; " >
         <tr> 
@@ -202,20 +225,33 @@
                     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
+<<<<<<< HEAD
                                 <a class="nav-link" href="#" style="color: #fff"><i class="fa fa-bars"></i> Update: 2021-01-29 20:10:00 </a>
+=======
+                                <a class="nav-link" href="#" style="color: #fff"><i class="fa fa-bars"></i> Update: 2021-04-26 9:59:01 </a>
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                             </li>
                         </ul>
                     </div>
                     <div class="mx-auto order-0">
                         <a class="navbar-brand" href="#" id="iddatasettitle"
                             onclick="
+<<<<<<< HEAD
                                 if (graphvis.isnamedbedited) {
+=======
+                                if (GFFOBJ.isnamedbedited) {
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                     this.style.display = 'none';
                                     gelem('layoutchangenametxtdb').style.display = 'block';
                                     ffocus('idtextdbname');
                                 }
                             " 
+<<<<<<< HEAD
                         ></a>
+=======
+                        >
+                        </a>
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                         <div id="layoutchangenametxtdb"
                             style="display: none; margin: 0; padding: 0;"
                         >
@@ -223,11 +259,19 @@
                                 placeholder="Dataset name"
                                 autocomplete="off"
 
+<<<<<<< HEAD
                                 class="form-control input-sm"
                                 style="width: 250px;"
                                 id="idtextdbname" 
                                 onkeypress="
                                     graphvis.updatedatasetname(event, this.value);
+=======
+                                class="form-control form-control-sm"
+                                style="width: 250px;"
+                                id="idtextdbname" 
+                                onkeypress="
+                                    GFFOBJ.updatedatasetname(event, this.value);
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                 "
                             >
                         </div>
@@ -237,7 +281,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#" style="color: #fff"><i class="fa fa-user-circle"></i> {{email}}</a>
                             </li>
+<<<<<<< HEAD
                             <li class="nav-item"
+=======
+                            <li id="idlogout2" class="nav-item"
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                 onclick="
                                     window.location.href = './logout';
                                 "
@@ -257,8 +305,13 @@
                             id="iduserlistop"
                             style="display: none;"
                             onclick="
+<<<<<<< HEAD
                                 graphvis.fullScreen();
                                 graphvis.listusers();
+=======
+                                GFFOBJ.setfullScreen();
+                                GFFOBJ.listusers();
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 
                             "
                         >
@@ -268,32 +321,51 @@
                         </li>
                         <li class="nav-item" title="Datasets"
                             onclick="
+<<<<<<< HEAD
                                 graphvis.fullScreen();
                                 graphvis.loadlayoutdbs();
+=======
+                                GFFOBJ.setfullScreen();
+                                GFFOBJ.loadlayoutdbs();
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                             "
                         >
                             <a class="nav-link" style="color: #ccc" href="#">
                                 <i class="fa fa-database fa-lg"></i>
                             </a>
                         </li>
+<<<<<<< HEAD
                         <li class="nav-item" title="Dashboard"
                             onclick="
                                 graphvis.shifflayoutcontrols('mainlayout');
+=======
+<!--                         <li class="nav-item" title="Dashboard"
+                            onclick="
+                                GFFOBJ.shifflayoutcontrols('mainlayout');
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                             "
                         >
                             <a class="nav-link" style="color: #ccc" href="#">
                                 <i class="fa fa-edit fa-lg"></i>
                             </a>
+<<<<<<< HEAD
                         </li>
                         <li id="idchangelayhoutdis" class="nav-item" title="Change Password"
                             onclick="
                                 graphvis.shifflayoutcontrols('idchangepasswordlayout');
+=======
+                        </li> -->
+                        <li id="idchangelayhoutdis" class="nav-item" title="Change Password"
+                            onclick="
+                                GFFOBJ.shifflayoutcontrols('idchangepasswordlayout');
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                             "
                         >
                             <a class="nav-link" style="color: #ccc" href="#">
                                 <i class="fa fa-key fa-lg"></i>        
                             </a>
                         </li>
+<<<<<<< HEAD
 
 <script>
     if (graphvis.multiuser ==0){
@@ -303,6 +375,11 @@
                         <li class="nav-item" title="About"
                             onclick="
                                 graphvis.shifflayoutcontrols('idaboutlayout');
+=======
+                        <li class="nav-item" title="About"
+                            onclick="
+                                GFFOBJ.shifflayoutcontrols('idaboutlayout');
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                             "
                         >
                             <a class="nav-link" style="color: #ccc" href="#">
@@ -311,7 +388,11 @@
                         </li>
                         <li class="nav-item"
                             onclick="
+<<<<<<< HEAD
                                 graphvis.fullScreen();
+=======
+                                GFFOBJ.fullScreen();
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                             "
                             title="Fullscreen" 
                         >
@@ -319,7 +400,11 @@
                                 <i class="fas fa-expand fa-lg"></i>
                             </a>
                         </li>
+<<<<<<< HEAD
                         <li class="nav-item"
+=======
+                        <li id="idlogout1" class="nav-item"
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                             onclick="
                                 window.location.href = './logout';
                             "
@@ -331,10 +416,64 @@
                         </li>
                     </ul>
                 </nav>
+<<<<<<< HEAD
+=======
+                <script>
+                    if ("{{multiuser}}"==0){
+                        gelem('idchangelayhoutdis').style.display = "none";
+                        gelem('idlogout1').style.display = "none";
+                        gelem('idlogout2').style.display = "none";
+                    }
+                </script>                
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
             </td>
             <td style="width: 100%; padding: 10px; vertical-align: top;
                 ">
                 
+<<<<<<< HEAD
+=======
+                <div id="idstatedataset" style="display: none;">
+                    <div style="width: 380px; margin: 0 auto; color: #fff;
+                            /* border: solid 1px #444; */
+                            background-color: #303161;
+                            padding: 7px;
+                        "
+                    >
+                        <div style="text-align: center;">Your query is being processed</div>
+                        <div style="height: 5px;"></div>
+                        <div style="border-bottom: solid 1px #6b6a9c ;"></div>
+                        <div style="height: 5px;"></div>
+                        <table style="width: 100%;">
+                            <tr>
+                                <td>
+                                    <button class="btn btn-danger btn-sm" type="button"
+                                        title="Working"
+                                    >
+                                        <i class="fas fa-cog fa-spin fa-lg"></i>
+                                    </button>
+                                </td>
+                                <td style="width: 100%;">
+                                    <div id="idstatusval" style="padding: 5px;">
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn btn-primary btn-sm" type="button"
+                                        title="Refresh"
+                                        onclick="
+                                            //GFFOBJ.dequeLoadFeatures();
+                                            GFFOBJ.memprocess.apply(this);
+                                        "
+                                    >
+                                        <i class="fas fa-sync-alt"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                 <!-- from to change password -->
                 <div id="idchangepasswordlayout" style="display: none;">
                      <div style="width: 300px; margin: 0 auto; color: #fff;">
@@ -352,7 +491,11 @@
                                     <div style="height: 2px"></div>
                                     <button class="form-control btn-primary" style="width: 150px"
                                         onclick="
+<<<<<<< HEAD
                                             graphvis.changepassword();
+=======
+                                            GFFOBJ.changepassword();
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                         " 
                                     >Save</button>
                                 </div>
@@ -368,11 +511,19 @@
                         <table style="width: 30%">
                             <tr>
                                 <td style="width: 100%">
+<<<<<<< HEAD
                                     <span class="fa fa-search form-control-feedback"></span>
                                     <input id="idtxtsearch" type="search" class="form-control"
                                         style="padding-left: 2.375rem; width: 100%" placeholder="Search"
                                         onkeyup="
                                             graphvis.searchdataset(this.value);
+=======
+                                    <!-- <span class="fa fa-search form-control-feedback"></span> -->
+                                    <input id="idtxtsearch" type="search" class="form-control"
+                                        placeholder="Search"
+                                        onkeyup="
+                                            GFFOBJ.searchdataset(this.value);
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                             //alert();
                                         "
                                     >
@@ -387,11 +538,17 @@
                                     >
                                         <a class="btn btn-danger"
                                             onclick="
+<<<<<<< HEAD
 
                                                 gelem('fileu').click();
                                                 
                                             "
                                             title="Upload dataset (only .csv and .data files)"
+=======
+                                                gelem('fileu').click();
+                                            "
+                                            title="Upload dataset (only .csv and .zip(csv) files)"
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                             style="width: 30px" 
                                         >
                                             <i class="fa fa-upload"></i>
@@ -400,7 +557,11 @@
                                         <input type="file" id="fileu" name="fileu"
                                             onchange="
                                                 if (trim(this.value)!=''){
+<<<<<<< HEAD
                                                     graphvis.uploadfiledata();
+=======
+                                                    GFFOBJ.uploadfiledata();
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                 }
                                             "
                                             style="display: none"
@@ -471,8 +632,18 @@
                                 <table style="width: 100%;">
                                     <tr>
                                         <td>
+<<<<<<< HEAD
                                             <a	class="btn btn-primary btn-sm"						
                                                 href="https://ivarvb.github.io/GFF/"
+=======
+                                            <a	class="btn btn-primary btn-sm"
+                                                onclick="
+                                                    window.open(
+                                                    'https://ivarvb.github.io/GFF/',
+                                                    '_blank'
+                                                    );
+                                                "
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                             >
                                                 <!-- <i class="fa fa-github"></i>  -->
                                                 Source Code Download
@@ -541,8 +712,13 @@
                                             </td>
                                             <td>
                                                 <div style="font-size: 10px;
+<<<<<<< HEAD
                                                      min-width: 70px; max-width: 70px;
                                                      ">ATTRIBUTES</div>
+=======
+                                                     min-width: 140px; max-width: 70px;
+                                                     ">FEATURES</div>
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                             </td>
                                             <td style="width: 100%">
 
@@ -560,10 +736,17 @@
                                                             class="form-control form-control-sm"
                                                             style="min-width: 70px; max-width: 70px"
                                                             onclick="
+<<<<<<< HEAD
                                                                 graphvis.target = this.value;
                                                             "
                                                             onchange="
                                                                 graphvis.target = this.value;
+=======
+                                                                GFFOBJ.target = this.value;
+                                                            "
+                                                            onchange="
+                                                                GFFOBJ.target = this.value;
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                             "
                                                     >
                                                             <option>None</option>
@@ -574,12 +757,23 @@
                                                             class="form-control form-control-sm"
                                                             style="min-width: 70px; max-width: 70px"
                                                             onclick="
+<<<<<<< HEAD
                                                                 graphvis.target = this.value;
                                                             "
                                                             onchange="
                                                                 graphvis.target = this.value;
                                                             "
                                                     >
+=======
+                                                                //GFFOBJ.target = this.value;
+                                                            "
+                                                            onchange="
+                                                                GFFOBJ.target = this.value;
+                                                                USFOBJ.print();
+
+                                                            "
+                                                        >
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                             <option>None</option>
                                                         </select>
                                                     </td>
@@ -633,6 +827,7 @@
                                                         </select>
                                                     </td>
                                                     <td>
+<<<<<<< HEAD
                                                         <select id="attributes"
                                                             class="form-control form-control-sm col-md-8"
                                                             style="max-width: 70px; min-width: 70px"
@@ -648,12 +843,53 @@
                                                             <option value="tester2">TEST2</option>-->
                                                             <!--option-->
                                                         </select>
+=======
+                                                        <!-- 
+                                                        <div class="btn-group">
+                                                            <button type="button"
+                                                                class="btn btn-danger btn-sm dropdown-toggle"
+                                                                aria-haspopup="true"
+                                                                aria-expanded="false"
+                                                                style="max-width: 70px; min-width: 70px"
+                                                                id="idselectedfebt"
+                                                            >
+                                                                Features
+                                                            </button>
+                                                        </div>
+                                                         -->
+                                                        <div
+                                                            id="idselectedfebt"
+                                                            class="btn-group" role="group" aria-label="Basic example"
+                                                        >
+                                                            <button type="button" 
+                                                                class="btn btn-primary btn-sm"
+                                                                style="width: 70px;"
+                                                            >
+                                                                Select
+                                                            </button>
+                                                            <button type="button"
+                                                                class="btn btn-danger btn-sm dropdown-toggle"
+                                                                style="width: 70px;"
+                                                            >
+                                                                Unselect
+                                                            </button>
+                                                        </div>                                                        
+                                                        <div id="idunselectedfecont"></div>
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                     </td>
                                                     <td style="width: 100%; text-align: right;">
                                                         <p class="bs-component" style="margin: 0; padding: 0;">
                                                             <a href="#" class="btn btn-primary btn-sm"
                                                                 onclick="
+<<<<<<< HEAD
                                                                    graphvis.visFeatures();
+=======
+                                                                   //GFFOBJ.visFeatures();
+                                                                   
+                                                                   GFFOBJ.dequeSendFeaturesChecks();
+                                                                   
+                                                                   //GFFOBJ.dequeLoadDataset(xxxx);
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                 "
                                                                 title="Execute feature visualization"
                                                                 style="margin-right: 0;"
@@ -680,6 +916,7 @@
                                              ">
                                             <table>
                                                 <tr>
+<<<<<<< HEAD
                                                     <td>
                                                         <div style="width: 20px; vertical-align: top;">
                                                             <div style="width: 20px">
@@ -695,6 +932,20 @@
 
                                                                 <svg style="width: 20px" id="seq1"></svg>
                                                             </div>
+=======
+                                                    <td style="vertical-align: top;">
+                                                        <div style="width: 20px; vertical-align: top;">
+                                                            <div style="background-color: #000; padding: 1px;"
+                                                                title="Change colors (vertex)"
+                                                                onclick="
+                                                                    GFFOBJ.colorstableshitttype = 1;
+                                                                    CCTT.makeSelectionColorPalette(400, 10);
+                                                                "
+                                                            >
+                                                                <img src="./img/wheel.png" style="width: 18px;">
+                                                            </div>
+                                                            <svg style="width: 20px" id="seq1"></svg>
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                         </div>
                                                     </td>
                                                     <td>
@@ -812,7 +1063,11 @@
                                                                 >
                                                                     <a href="#" class="btn btn-warning btn-sm"
                                                                         onclick="
+<<<<<<< HEAD
                                                                             graphvis.save_as_svg('#featselectfeaturecontent','features');
+=======
+                                                                            GFFOBJ.save_as_svg('#featselectfeaturecontent','features');
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                         "
                                                                         title="Export as svg image"
                                                                         style="width: 100%;
@@ -841,10 +1096,17 @@
                                                         <table id="idlayout1bar" style="width: 22px;">
                                                             <tr>
                                                                 <td style="vertical-align: top;">
+<<<<<<< HEAD
                                                                     <div style="height: 5px"></div>
                                                                     <a href="#" class="btn btn-dark btn-sm"
                                                                             onclick="
                                                                                graphvis.layoutfeatures.stopplayforce();
+=======
+                                                                    <div style="height: 3px"></div>
+                                                                    <a href="#" class="btn btn-dark btn-sm"
+                                                                            onclick="
+                                                                               GFFOBJ.layoutfeatures.stopplayforce();
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 
                                                                             "
                                                                             title="Play/Stop"
@@ -859,11 +1121,19 @@
                                                                         ></i>
                                                                     </a>
 
+<<<<<<< HEAD
                                                                     <div style="height: 5px"></div>
 
                                                                     <a href="#" class="btn btn-danger btn-sm"
                                                                         onclick="
                                                                             graphvis.layoutfeatures.showedges();
+=======
+                                                                    <div style="height: 3px"></div>
+
+                                                                    <a href="#" class="btn btn-danger btn-sm"
+                                                                        onclick="
+                                                                            GFFOBJ.layoutfeatures.showedges();
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                         "
                                                                         title="Show edges"
                                                                         style="width: 100%;
@@ -876,11 +1146,19 @@
                                                                             ></i>
                                                                     </a>
                                                                         
+<<<<<<< HEAD
                                                                     <div style="height: 5px"></div>
                                                                     
                                                                     <a href="#" class="btn btn-secondary"
                                                                         onclick="
                                                                             graphvis.showedgebundlingX();
+=======
+                                                                    <div style="height: 3px"></div>
+                                                                    
+                                                                    <a href="#" class="btn btn-secondary"
+                                                                        onclick="
+                                                                            GFFOBJ.showedgebundlingX();
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                         "
                                                                         title="Show edge bundling"
                                                                         style="width: 100%;
@@ -897,7 +1175,11 @@
                                                                     
                                                                     <a href="#" class="btn btn-primary"
                                                                         onclick="
+<<<<<<< HEAD
                                                                             graphvis.initradiallayout();
+=======
+                                                                            GFFOBJ.initradiallayout();
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                         "
                                                                         title="Show edge bundling"
                                                                         style="width: 100%;
@@ -910,7 +1192,13 @@
                                                                         ></i>
                                                                     </a> -->
 
+<<<<<<< HEAD
                                                                     <hr>
+=======
+                                                                    <div style="height: 3px;"></div>
+                                                                    <div style="border-top: solid 1px #ccc;"></div>
+                                                                    <div style="height: 3px;"></div>
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                     
                                                                     <a href="#" class="btn"
                                                                         id="btnintarget"
@@ -921,7 +1209,11 @@
                                                                         background-color: #f1f1f1;
                                                                         "
                                                                         onclick="
+<<<<<<< HEAD
                                                                             graphvis.changeintarget();
+=======
+                                                                            GFFOBJ.changeintarget();
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                         "
                                                                     >
                                                                         <i class="fa fa-circle fa-lg"
@@ -930,8 +1222,15 @@
                                                                             "
                                                                         ></i>
                                                                     </a>
+<<<<<<< HEAD
 
                                                                     <hr>
+=======
+                                                                    
+                                                                    <div style="height: 3px;"></div>
+                                                                    <div style="border-top: solid 1px #ccc;"></div>
+                                                                    <div style="height: 3px;"></div>
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 
                                                                     <div class="dropleft"
                                                                         style="padding: 0;margin:0; "
@@ -972,7 +1271,11 @@
                                                                                 <div class="input-group-append">
                                                                                     <button class="btn btn-primary" type="button"
                                                                                         onclick="
+<<<<<<< HEAD
                                                                                             graphvis.featureselectionbyfiltername(gelem('fesenanetxt').value);
+=======
+                                                                                            GFFOBJ.featureselectionbyfiltername(gelem('fesenanetxt').value);
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                                         "
                                                                                     >Filter</button>
                                                                                 </div>
@@ -980,7 +1283,11 @@
                                                                         </div>
                                                                     </div>
 
+<<<<<<< HEAD
                                                                     <hr>
+=======
+                                                                    <div style="height: 3px;"></div>
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                     
                                                                     <a href="#" class="btn btn-success"
                                                                         title="View features selected"
@@ -989,7 +1296,11 @@
                                                                         "
                                                                         onclick="
                                                                             gelem('featselectfeature').style.display = 'block'; 
+<<<<<<< HEAD
                                                                             graphvis.viewFeaturesSelected('feature');
+=======
+                                                                            GFFOBJ.viewFeaturesSelected('feature');
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                         "                                                                
                                                                     >
                                                                         <i class="fas fa-chart-bar fa-lg"
@@ -999,11 +1310,19 @@
                                                                         ></i>
                                                                     </a>
 
+<<<<<<< HEAD
                                                                     <hr>
 
                                                                     <a href="#" class="btn btn-warning btn-sm"
                                                                         onclick="
                                                                             graphvis.save_as_svg('#vis','graph');
+=======
+                                                                    <div style="height: 3px;"></div>
+
+                                                                    <a href="#" class="btn btn-warning btn-sm"
+                                                                        onclick="
+                                                                            GFFOBJ.save_as_svg('#vis','graph');
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                         "
                                                                         title="Export as svg image"
                                                                         style="width: 100%;
@@ -1015,11 +1334,19 @@
                                                                         ></i>
                                                                     </a>
 
+<<<<<<< HEAD
                                                                     <div style="height: 5px"></div>
                                                                     
                                                                     <a href="#" class="btn btn-dark btn-sm"
                                                                         onclick="
                                                                             graphvis.exportfeat2datafile();
+=======
+                                                                    <div style="height: 3px"></div>
+                                                                    
+                                                                    <a href="#" class="btn btn-dark btn-sm"
+                                                                        onclick="
+                                                                            GFFOBJ.exportfeat2datafile();
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                         "
                                                                         title="Export data in .data file"
                                                                         style="width: 100%;
@@ -1031,7 +1358,13 @@
                                                                         ></i>
                                                                     </a>
 
+<<<<<<< HEAD
                                                                     <hr>
+=======
+                                                                    <div style="height: 3px;"></div>
+                                                                    <div style="border-top: solid 1px #ccc;"></div>
+                                                                    <div style="height: 3px;"></div>
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 
                                                                     <input type="range" min="0" max="15" value="0"
                                                                         style="
@@ -1044,28 +1377,49 @@
                                                                         "
                                                                         onchange="
                                                                              var pct = this.value/15.0;
+<<<<<<< HEAD
                                                                              graphvis.layoutfeatures.updatesizecircle(pct);
+=======
+                                                                             GFFOBJ.layoutfeatures.updatesizecircle(pct);
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                         "
                                                                         onmousemove="
                                                                             numb = (this.value/15)*100.0;
                                                                             if (numb==0)
                                                                                 numb = 1;
                                                                             numb = numb.toFixed(2);
+<<<<<<< HEAD
                                                                             graphvis.setToolpiltex(
                                                                                 event.clientX-100,
                                                                                 event.clientY,
                                                                                 'Size circle %'+numb+''
+=======
+                                                                            GFFOBJ.setToolpiltex(
+                                                                                event.clientX-100,
+                                                                                event.clientY,
+                                                                                'Size circle '+numb+'%'
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                                 );
                                                                             //console.log(numb);
                                                                         "
                                                                         onmouseout="
+<<<<<<< HEAD
                                                                             graphvis.hideToolpiltex();
+=======
+                                                                            GFFOBJ.hideToolpiltex();
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                         "
 
                                                                     />
 
+<<<<<<< HEAD
 
                                                                     <hr>
+=======
+                                                                    <div style="height: 3px;"></div>
+                                                                    <div style="border-top: solid 1px #ccc;"></div>
+                                                                    <div style="height: 3px;"></div>
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 
                                                                     <input id ="edgesopacslider" type="range" min="2" max="100" value="75"
                                                                         style="
@@ -1077,12 +1431,21 @@
                                                                             -webkit-appearance: slider-vertical;
                                                                         "
                                                                         onchange="
+<<<<<<< HEAD
                                                                             graphvis.edgetransparency = (this.value/100.0);
                                                                             graphvis.layoutfeatures.updateedgestransparency();
                                                                         "
                                                                         onmousemove="
                                                                             numb = this.value;
                                                                             graphvis.setToolpiltex(
+=======
+                                                                            GFFOBJ.edgetransparency = (this.value/100.0);
+                                                                            GFFOBJ.layoutfeatures.updateedgestransparency();
+                                                                        "
+                                                                        onmousemove="
+                                                                            numb = this.value;
+                                                                            GFFOBJ.setToolpiltex(
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                                 event.clientX,
                                                                                 event.clientY,
                                                                                 'Edge opacity '+numb+' %'
@@ -1090,6 +1453,7 @@
                                                                             //console.log(numb);
                                                                         "
                                                                         onmouseout="
+<<<<<<< HEAD
                                                                             graphvis.hideToolpiltex();
                                                                         "
 
@@ -1113,6 +1477,12 @@
                                                                             "
                                                                             ></i>
                                                                     </a> -->
+=======
+                                                                            GFFOBJ.hideToolpiltex();
+                                                                        "
+
+                                                                    />
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -1139,12 +1509,21 @@
                                                                     >
                                                                         <i class="far fa-square fa-lg"></i>
                                                                     </a>
+<<<<<<< HEAD
                                                                     <div style="height: 5px"></div>
                                                                     <div style="background-color: #000; padding: 1px;"
                                                                         title="Change colors (edges)"
                                                                         onclick="
                                                                             graphvis.colorstableshitttype = 2;
                                                                             makeSelectionColorPalette(400, 10);
+=======
+                                                                    <div style="height: 3px"></div>
+                                                                    <div style="background-color: #000; padding: 1px;"
+                                                                        title="Change colors (edges)"
+                                                                        onclick="
+                                                                            GFFOBJ.colorstableshitttype = 2;
+                                                                            CCTT.makeSelectionColorPalette(400, 10);
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                         "
                                                                     >
                                                                         <img src="./img/wheel.png" style="width: 18px;">
@@ -1169,6 +1548,7 @@
                                                                         padding: 1px;
                                                                     "
                                                                     onclick="
+<<<<<<< HEAD
                                                                         if (graphvis.exchageslider==0){
                                                                             graphvis.exchageslider = 180;
                                                                         }
@@ -1177,6 +1557,16 @@
                                                                         }
                                                                         gelem('edgeslider').style.transform = 'rotate('+graphvis.exchageslider+'deg)';
                                                                         graphvis.layoutfeatures.updatelinkoption(gelem('edgeslider').value,'percen');
+=======
+                                                                        if (GFFOBJ.exchageslider==0){
+                                                                            GFFOBJ.exchageslider = 180;
+                                                                        }
+                                                                        else{
+                                                                            GFFOBJ.exchageslider = 0;
+                                                                        }
+                                                                        gelem('edgeslider').style.transform = 'rotate('+GFFOBJ.exchageslider+'deg)';
+                                                                        GFFOBJ.layoutfeatures.updatelinkoption(gelem('edgeslider').value,'percen');
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                     "
                                                                 >
                                                                     <i class="fas fa-exchange-alt fa-lg"
@@ -1207,7 +1597,11 @@
                                                                 "
                                                                 onchange="
             //                                                        updatelink(this.value);
+<<<<<<< HEAD
                                                                     graphvis.layoutfeatures.updatelinkoption(this.value,'percen');
+=======
+                                                                    GFFOBJ.layoutfeatures.updatelinkoption(this.value,'percen');
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                     numb = (Math.pow(this.value,3.0)/1000000000000.0)*100.0;
                                                                     numb = numb.toFixed(2);
 
@@ -1241,9 +1635,12 @@
                                     ">
                                         <tr>
                                             <td>
+<<<<<<< HEAD
     <!--                                            <div style="min-width: 25px; max-width: 25px;"></div>
                                             </td>
                                             <td>-->
+=======
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                 <div style="font-size: 10px;
                                                      min-width: 110px; max-width: 110px;
                                                      ">PROJECTION</div>
@@ -1256,7 +1653,11 @@
                                             <td>
                                                 <div style="font-size: 10px;
                                                      min-width: 110px; max-width: 110px;
+<<<<<<< HEAD
                                                      ">TOOLTIP</div>
+=======
+                                                     ">SELECT ID</div>
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                             </td>
                                             <td style="width: 100%">
 
@@ -1318,6 +1719,7 @@
                                                         </select>
                                                     </td>
                                                     <td>
+<<<<<<< HEAD
                                                         <select id="tooltip"
                                                             class="form-control form-control-sm col-md-8"
                                                             style="max-width: 70px; min-width: 70px"
@@ -1329,13 +1731,31 @@
                                                             "
                                                     >
                                                             <option>None</option>
+=======
+                                                        <select id="idinstanceslabels" 
+                                                            class="form-control form-control-sm col-md-8"
+                                                            style="max-width: 110px; min-width: 110px;"
+                                                            onchange="
+                                                                var txtv = trim(this.value);
+                                                                console.log('txtv', txtv);
+                                                                if(txtv!=''){
+                                                                    GFFOBJ.makeInstancesLabels(txtv);
+                                                                }
+                                                            "
+                                                        >
+                                                            <option value="">None</option>
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                         </select>
                                                     </td>
                                                     <td style="width: 100%; text-align: right">
                                                         <p class="bs-component" style="margin: 0; padding: 0">
                                                             <a href="#" class="btn btn-success btn-sm"
                                                                 onclick="
+<<<<<<< HEAD
                                                                     graphvis.visInstnaces();
+=======
+                                                                    GFFOBJ.visInstnaces();
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                 "
                                                                 title="Execute instance visualization"
                                                             >
@@ -1468,7 +1888,11 @@
                                                                 >
                                                                     <a href="#" class="btn btn-warning btn-sm"
                                                                         onclick="
+<<<<<<< HEAD
                                                                             graphvis.save_as_svg('#featselectinstancecontent','instance');
+=======
+                                                                            GFFOBJ.save_as_svg('#featselectinstancecontent','instance');
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                         "
                                                                         title="Export as svg image"
                                                                         style="width: 100%;
@@ -1497,11 +1921,19 @@
                                                             <tr>
                                                                 <td style="vertical-align: top;">
 
+<<<<<<< HEAD
                                                                     <div style="height: 5px"></div>
                                                                     
                                                                     <a href="#" class="btn btn-danger btn-sm"
                                                                         onclick="
                                                                             graphvis.silhouette();
+=======
+                                                                    <div style="height: 3px"></div>
+                                                                    
+                                                                    <a href="#" class="btn btn-danger btn-sm"
+                                                                        onclick="
+                                                                            GFFOBJ.silhouette();
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                         "
                                                                         title="Compute silhoutte"
                                                                         style="width: 100%;
@@ -1509,17 +1941,32 @@
                                                                         "
                                                                     >
                                                                         <i class="fa fa-leaf fa-lg"
+<<<<<<< HEAD
                                                                             ="padding: 0;margin: 0; width: 100%"
                                                                         ></i>
                                                                     </a>
 
                                                                     <hr>
+=======
+                                                                            style="padding: 0;margin: 0; width: 100%"
+                                                                        ></i>
+                                                                    </a>
+
+                                                                    <div style="height: 3px;"></div>
+                                                                    <div style="border-top: solid 1px #ccc;"></div>
+                                                                    <div style="height: 3px;"></div>
+
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 
                                                                     <!-- <div style="height: 5px"></div> -->
 
                                                                     <a href="#" class="btn btn-warning btn-sm"
                                                                         onclick="
+<<<<<<< HEAD
                                                                             graphvis.save_as_svg('#visp','instance');
+=======
+                                                                            GFFOBJ.save_as_svg('#visp','instance');
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                         "
                                                                         title="Export as svg image"
                                                                         style="width: 100%;
@@ -1531,6 +1978,7 @@
                                                                         ></i>
                                                                     </a>
 
+<<<<<<< HEAD
                                                                     <div style="height: 5px"></div>
 
                                                                     <a href="#" class="btn btn-dark btn-sm"
@@ -1538,12 +1986,25 @@
                                                                             graphvis.export2dproj();
                                                                         "
                                                                         title="Export projection in .prj file"
+=======
+                                                                    <div style="height: 3px"></div>
+
+                                                                    <a href="#" class="btn btn-dark btn-sm"
+                                                                        onclick="
+                                                                            //GFFOBJ.export2dprojwhole();
+                                                                            if (GFFOBJ.layoutinstance!=null){
+                                                                                GFFOBJ.layoutinstance.exwholeinstancesprj();
+                                                                            }
+                                                                        "
+                                                                        title="Export whole projection in .prj file"
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                         style="width: 100%;
                                                                         padding: 1px;
                                                                         /*padding-bottom: 0px;*/
                                                                         "
                                                                     >
                                                                         <i class="fa fa-download fa-lg"
+<<<<<<< HEAD
                                                                             ="padding: 0;margin: 0; width: 100%"
                                                                         ></i>
                                                                     </a>
@@ -1553,6 +2014,39 @@
                                                                     <a href="#" class="btn btn-primary btn-sm"
                                                                         onclick="
                                                                             graphvis.layoutintantes.exportidsinstancesselected();
+=======
+                                                                            style="padding: 0;margin: 0; width: 100%"
+                                                                        ></i>
+                                                                    </a>
+
+                                                                    <div style="height: 3px"></div>
+
+                                                                    <a href="#" class="btn btn-dark btn-sm"
+                                                                        onclick="
+                                                                            if (GFFOBJ.layoutinstance!=null){
+                                                                                GFFOBJ.layoutinstance.exselectedinstancesprj();
+                                                                            }
+                                                                        "
+                                                                        title="Export selected projection in .prj file"
+                                                                        style="width: 100%;
+                                                                        padding: 1px;
+                                                                        background-color: #4b298a;
+                                                                        border-color: #4b298a;
+                                                                        "
+                                                                    >
+                                                                        <i class="fa fa-download fa-lg"
+                                                                            style="padding: 0;margin: 0; width: 100%"
+                                                                        ></i>
+                                                                    </a>
+
+                                                                    <div style="height: 3px"></div>
+
+                                                                    <a href="#" class="btn btn-primary btn-sm"
+                                                                        onclick="
+                                                                            if (GFFOBJ.layoutinstance!=null){
+                                                                                GFFOBJ.layoutinstance.exidsinstancesprj();
+                                                                            }
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                         "
                                                                         title="Export ids selected in .txt file"
                                                                         style="width: 100%;
@@ -1561,11 +2055,22 @@
                                                                         "
                                                                     >
                                                                         <i class="fa fa-download fa-lg"
+<<<<<<< HEAD
                                                                             ="padding: 0;margin: 0; width: 100%"
                                                                         ></i>
                                                                     </a>
 
                                                                     <hr>
+=======
+                                                                            style="padding: 0;margin: 0; width: 100%"
+                                                                        ></i>
+                                                                    </a>
+
+                                                                    <div style="height: 3px;"></div>
+                                                                    <div style="border-top: solid 1px #ccc;"></div>
+                                                                    <div style="height: 3px;"></div>
+
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                     
                                                                     <a href="#" class="btn btn-success"
                                                                         title="View features selected"
@@ -1574,7 +2079,11 @@
                                                                         "
                                                                         onclick="
                                                                             gelem('featselectinstance').style.display = 'block'; 
+<<<<<<< HEAD
                                                                             graphvis.viewFeaturesSelected('instance');
+=======
+                                                                            GFFOBJ.viewFeaturesSelected('instance');
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                         "                                                                
                                                                     >
                                                                         <i class="fas fa-chart-bar fa-lg"
@@ -1584,7 +2093,14 @@
                                                                         ></i>
                                                                     </a>
 
+<<<<<<< HEAD
                                                                     <hr>
+=======
+                                                                    <div style="height: 3px;"></div>
+                                                                    <div style="border-top: solid 1px #ccc;"></div>
+                                                                    <div style="height: 3px;"></div>
+
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 
                                                                     <input type="range" min="2" max="15" value="4"
                                                                         style="
@@ -1596,12 +2112,21 @@
                                                                             -webkit-appearance: slider-vertical;
                                                                         "
                                                                         onchange="
+<<<<<<< HEAD
                                                                             graphvis.instvertexratio = this.value;
                                                                             graphvis.layoutintantes.updatesizeandopacity();
                                                                         "
                                                                         onmousemove="
                                                                             numb = this.value;
                                                                             graphvis.setToolpiltex(
+=======
+                                                                            GFFOBJ.instvertexratio = this.value;
+                                                                            GFFOBJ.layoutinstance.updatesizeandopacity();
+                                                                        "
+                                                                        onmousemove="
+                                                                            numb = this.value;
+                                                                            GFFOBJ.setToolpiltex(
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                                 event.clientX-100,
                                                                                 event.clientY,
                                                                                 'Size circle r='+numb+''
@@ -1609,12 +2134,23 @@
                                                                             //console.log(numb);
                                                                         "
                                                                         onmouseout="
+<<<<<<< HEAD
                                                                             graphvis.hideToolpiltex();
+=======
+                                                                            GFFOBJ.hideToolpiltex();
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                         "
 
                                                                     />
 
+<<<<<<< HEAD
                                                                     <hr>
+=======
+                                                                    <div style="height: 3px;"></div>
+                                                                    <div style="border-top: solid 1px #ccc;"></div>
+                                                                    <div style="height: 3px;"></div>
+
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 
                                                                     <input type="range" min="2" max="100" value="75"
                                                                         style="
@@ -1626,12 +2162,21 @@
                                                                             -webkit-appearance: slider-vertical;
                                                                         "
                                                                         onchange="
+<<<<<<< HEAD
                                                                             graphvis.instvertexoacity = (this.value/100.0);
                                                                             graphvis.layoutintantes.updatesizeandopacity();
                                                                         "
                                                                         onmousemove="
                                                                             numb = this.value;
                                                                             graphvis.setToolpiltex(
+=======
+                                                                            GFFOBJ.instvertexoacity = (this.value/100.0);
+                                                                            GFFOBJ.layoutinstance.updatesizeandopacity();
+                                                                        "
+                                                                        onmousemove="
+                                                                            numb = this.value;
+                                                                            GFFOBJ.setToolpiltex(
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                                 event.clientX-120,
                                                                                 event.clientY,
                                                                                 'Opacity circle '+numb+' %'
@@ -1639,17 +2184,34 @@
                                                                             //console.log(numb);
                                                                         "
                                                                         onmouseout="
+<<<<<<< HEAD
                                                                             graphvis.hideToolpiltex();
                                                                         "
 
                                                                     />
                                                                     <hr>
+=======
+                                                                            GFFOBJ.hideToolpiltex();
+                                                                        "
+
+                                                                    />
+
+                                                                    <div style="height: 3px;"></div>
+                                                                    <div style="border-top: solid 1px #ccc;"></div>
+                                                                    <div style="height: 3px;"></div>
+
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                     <div style="width: 20px">
                                                                         <div style="background-color: #000; padding: 1px;"
                                                                             title="Change colors (projection)"
                                                                             onclick="
+<<<<<<< HEAD
                                                                                 graphvis.colorstableshitttype = 3;
                                                                                 makeSelectionColorPalette(400, 10);
+=======
+                                                                                GFFOBJ.colorstableshitttype = 3;
+                                                                                CCTT.makeSelectionColorPalette(400, 10);
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
                                                                             "
                                                                         >
                                                                             <img src="./img/wheel.png" style="width: 18px;">
@@ -1690,6 +2252,7 @@
     </div>
     
 </div>
+<<<<<<< HEAD
 
 <script src="./lib/bootstrap-4.5.2-dist/js/bootstrap.bundle.min.js"></script>
 
@@ -1698,4 +2261,15 @@
    
 </script>
 
+=======
+<!-- <div id="idaddhide"></div> -->
+<script src="./lib/bootstrap-4.5.2-dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    let GFFOBJ = new GraphFromFeatures();
+    GFFOBJ.email ="{{email}}"; 
+    GFFOBJ.adminid ="{{adminid}}";
+    GFFOBJ.multiuser = "{{multiuser}}";
+    GFFOBJ.main();
+</script>
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 </body>
