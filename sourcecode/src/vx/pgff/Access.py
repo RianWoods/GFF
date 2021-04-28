@@ -19,8 +19,17 @@ from vx.pgff.User import *
 from vx.com.py.database.MongoDB import *
 
 class Login(BaseHandler):
+<<<<<<< HEAD
     def get(self):        
         self.render("login.html")
+=======
+    def get(self):
+        if Settings.MULIUSER==1:
+            self.render("login.html")
+        else:
+            self.redirect("./")
+        return
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 
     def post(self):
         op = int(self.get_argument('option'))

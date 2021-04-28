@@ -129,12 +129,20 @@ class User:
             rest = MongoDB.insert(DBS.DBGFF, "user", userdata)
             rest = str(rest)
 
+<<<<<<< HEAD
             fi = open("./vx/pgff/init.obj", 'w')
+=======
+            fi = open("./vx/pgff/config/init.obj", 'w')
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
             fi.write(rest)
             fi.close()
 
         elif len(rs)==1:
+<<<<<<< HEAD
             fi = open("./vx/pgff/init.obj", 'w')
+=======
+            fi = open("./vx/pgff/config/init.obj", 'w')
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
             fi.write(str(rs[0]["_id"]))
             fi.close()
 
@@ -158,7 +166,11 @@ class User:
 
     @staticmethod
     def rootread():
+<<<<<<< HEAD
         fi = open("./vx/pgff/init.obj", 'r')
+=======
+        fi = open("./vx/pgff/config/init.obj", 'r')
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
         Settings.ROOTID = fi.readline().strip()
         fi.close()
         

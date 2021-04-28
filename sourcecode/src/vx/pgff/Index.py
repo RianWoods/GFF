@@ -13,7 +13,11 @@ from vx.pgff.BaseHandler import *
 
 class Index(BaseHandler):
     def get(self):
+<<<<<<< HEAD
         if not self.current_user and Settings.MULIUSER==1:
+=======
+        if self.current_user == None and Settings.MULIUSER==1:
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
             self.redirect("./login")
             return
         else:

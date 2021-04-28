@@ -46,8 +46,14 @@ class Server(tornado.web.Application):
 
     @staticmethod
     def execute():
+<<<<<<< HEAD
         # User.rootinit();
         # User.rootread();
+=======
+        if Settings.MULIUSER==1:
+            User.rootinit();
+            User.rootread();
+>>>>>>> d52e075ee9202ad56995099b7c9fedb6ea96a974
 
         print ('The server is ready: http://'+Settings.HOST+':'+str(Settings.PORT)+'/')
         server = tornado.httpserver.HTTPServer(Server())
